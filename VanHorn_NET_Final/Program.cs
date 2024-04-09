@@ -10,9 +10,10 @@ builder.Services.AddDbContext<DomainContext>(options =>
 
 
 // added this in startup file initially but this seems to work
-builder.Services.AddAuthentication().AddCookie("MyCookieAuth", options =>
+builder.Services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", options =>
 {
     options.Cookie.Name = "MyCookieAuth";
+    options.LoginPath = "/account/login";
 });
 
 var app = builder.Build();
@@ -25,9 +26,12 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
