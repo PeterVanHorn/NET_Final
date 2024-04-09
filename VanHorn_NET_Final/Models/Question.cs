@@ -4,7 +4,6 @@
     {
         public int QuestionId { get; set; }
         public string QuestionText { get; set; }
-        public virtual List<String> Options { get; set; }
-        public string Answer { get; set; }
+        public virtual List<Option> Options { get; set; }
     }
 }
