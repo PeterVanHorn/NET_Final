@@ -8,6 +8,11 @@ builder.Services.AddRazorPages();
 builder.Services.AddDbContext<DomainContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MyConnection")));
 
+builder.Services.AddAuthentication().AddCookie("MyCookieAuth", options =>
+{
+    options.Cookie.Name = "MyCookieAuth";
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

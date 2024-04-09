@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|c:\\githubrepos\\net_final\\vanhorn_net_final\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|solutionrelative:pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|c:\\githubrepos\\net_final\\vanhorn_net_final\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|solutionrelative:pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|c:\\githubrepos\\net_final\\vanhorn_net_final\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|c:\\githubrepos\\net_final\\vanhorn_net_final\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|solutionrelative:models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,40 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Login.cshtml.cs",
-              "DocumentMoniker": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Account\\Login.cshtml.cs",
-              "RelativeDocumentMoniker": "Pages\\Account\\Login.cshtml.cs",
-              "ToolTip": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Account\\Login.cshtml.cs",
-              "RelativeToolTip": "Pages\\Account\\Login.cshtml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAJAAAA",
+              "Title": "Question.cs",
+              "DocumentMoniker": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Models\\Question.cs",
+              "RelativeDocumentMoniker": "Models\\Question.cs",
+              "ToolTip": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Models\\Question.cs",
+              "RelativeToolTip": "Models\\Question.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-27T15:58:06.981Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "Pages\\Account\\Login.cshtml",
-              "ToolTip": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Account\\Login.cshtml",
-              "RelativeToolTip": "Pages\\Account\\Login.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-27T15:58:00.848Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T15:19:27.148Z",
+              "WhenOpened": "2024-04-09T15:12:43.46Z",
               "EditorCaption": ""
             }
           ]
