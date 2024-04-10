@@ -26,8 +26,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\GitHubRepos\NET_Final\VanHorn_NET_Final
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/GitHubRepos/NET_Final/VanHorn_NET_Final/Pages/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/GitHubRepos/NET_Final/VanHorn_NET_Final/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GitHubRepos/NET_Final/VanHorn_NET_Final/Pages/CreateQuiz.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlUXVpei5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/GitHubRepos/NET_Final/VanHorn_NET_Final/Pages/Error.cshtml]
@@ -44,6 +52,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/GitHubRepos/NET_Final/VanHorn_NET_Final/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GitHubRepos/NET_Final/VanHorn_NET_Final/Pages/Teacher.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVhY2hlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/GitHubRepos/NET_Final/VanHorn_NET_Final/Pages/_ViewImports.cshtml]

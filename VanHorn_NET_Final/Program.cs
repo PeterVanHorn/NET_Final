@@ -14,6 +14,16 @@ builder.Services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", opt
 {
     options.Cookie.Name = "MyCookieAuth";
     options.LoginPath = "/account/login";
+    options.AccessDeniedPath = "/Account/AccessDenied";
+});
+
+builder.Services.AddAuthorization(Options =>
+{
+    Options.AddPolicy("TeacherOnly",
+        policy => policy.RequireClaim("Teacher"));
+
+    Options.AddPolicy("MustBeTeacherType", 
+        policy => policy.RequireClaim("Type", "Teacher"));
 });
 
 var app = builder.Build();

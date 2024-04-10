@@ -26,7 +26,9 @@ namespace VanHorn_NET_Final.Pages.Account
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, "admin"),
-                    new Claim(ClaimTypes.Email, "admin@mywebsite.com")
+                    new Claim(ClaimTypes.Email, "admin@mywebsite.com"),
+                    new Claim("Type", "Teacher"),
+                    new Claim("Teacher", "True")
                 };
                 var identity = new ClaimsIdentity(claims, "MyCookieAuth");
                 ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);
