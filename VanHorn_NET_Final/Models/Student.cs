@@ -2,8 +2,9 @@
 {
     public class Student
     {
-        public int Id { get; set; }
+        public int StudentId { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
+        public virtual List<Quiz> Quizzes { get; set; }
     }
 }
