@@ -22,6 +22,7 @@ namespace VanHorn_NET_Final.Pages.Quizzes
 
         public IActionResult OnGet()
         {
+            ViewData["TeacherId"] = new SelectList(_context.Teachers, "TeacherId", "LastName");
             return Page();
         }
 

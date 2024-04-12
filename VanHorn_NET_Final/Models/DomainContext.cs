@@ -12,6 +12,7 @@ namespace VanHorn_NET_Final.Models
         public DbSet<Question> Questions { get; set; }
         public DbSet<Quiz> Quizzes { get; set; }
         public DbSet<Student> Student { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
 
         public DomainContext(DbContextOptions<DomainContext> options) : base(options)
         {
@@ -30,10 +31,6 @@ namespace VanHorn_NET_Final.Models
                 .HasMany(q => q.Quizzes)
                 .WithOne(t => t.Teacher);
 
-            //modelBuilder.Entity<Student>()
-            //    .HasMany(q => q.Quizzes)
-            //    .WithOne(s => s.Student);
-
             IList<Teacher> teachers = new List<Teacher>();
             teachers.Add(new Teacher() { TeacherId = 1, FirstName = "Steve", LastName = "French" });
 
@@ -41,6 +38,7 @@ namespace VanHorn_NET_Final.Models
 
             IList<Student> students = new List<Student>();
             students.Add(new Student() { StudentId = 1, firstName = "Bob", lastName = "Dole", TeacherId = 1 });
+            students.Add(new Student() { StudentId = 2, firstName = "Geoffry", lastName = "Dahmer", TeacherId = 1 });
 
             modelBuilder.Entity<Student>().HasData(students);
         }
