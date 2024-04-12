@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pYQKJ6cIyUHpdcbhmEadSBEgXaVJYjmG92Hr+nY6TuoMhj4+DgwVqXQqBwteyhzN+uNm0PoRoddaODQCwQz2mA==",
+  "dgSpecHash": "rEOXQS4aeX5f2NBPpJeSr5U+N2lyPY5rLEl5orwf3yKpDYhhhD8WNiFmYFYJdW9wC8vtQqLrxT5jsPVRLaFVCw==",
   "success": true,
-  "projectFilePath": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\VanHorn_NET_Final.csproj",
+  "projectFilePath": "C:\\gitHubRepos\\VanHorn_NET_Final\\VanHorn_NET_Final.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\peter\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\peter\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

@@ -7844,11 +7844,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\VanHorn_NET_Final.csproj",
+      "projectUniqueName": "C:\\gitHubRepos\\VanHorn_NET_Final\\VanHorn_NET_Final.csproj",
       "projectName": "VanHorn_NET_Final",
-      "projectPath": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\VanHorn_NET_Final.csproj",
+      "projectPath": "C:\\gitHubRepos\\VanHorn_NET_Final\\VanHorn_NET_Final.csproj",
       "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
-      "outputPath": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\obj\\",
+      "outputPath": "C:\\gitHubRepos\\VanHorn_NET_Final\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
