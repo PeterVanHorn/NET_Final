@@ -34,10 +34,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/GitHubRepos/NET_Final/VanHorn_NET_Final/Pages/CreateQuiz.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlUXVpei5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/GitHubRepos/NET_Final/VanHorn_NET_Final/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -48,6 +44,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/GitHubRepos/NET_Final/VanHorn_NET_Final/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GitHubRepos/NET_Final/VanHorn_NET_Final/Pages/Quizzes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVpenplc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GitHubRepos/NET_Final/VanHorn_NET_Final/Pages/Quizzes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVpenplc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GitHubRepos/NET_Final/VanHorn_NET_Final/Pages/Quizzes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVpenplc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GitHubRepos/NET_Final/VanHorn_NET_Final/Pages/Quizzes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVpenplc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/GitHubRepos/NET_Final/VanHorn_NET_Final/Pages/Quizzes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVpenplc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/GitHubRepos/NET_Final/VanHorn_NET_Final/Pages/Shared/_ValidationScriptsPartial.cshtml]

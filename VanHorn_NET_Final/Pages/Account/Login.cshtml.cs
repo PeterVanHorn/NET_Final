@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client.Platforms.Features.DesktopOs.Kerberos;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
