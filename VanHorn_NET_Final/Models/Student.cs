@@ -6,5 +6,6 @@
         public string firstName { get; set; }
         public string lastName { get; set; }
         public virtual List<Quiz> Quizzes { get; set; }
+        public Teacher Teacher { get; set; }
     }
 }

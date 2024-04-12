@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VanHorn_NET_Final")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4168d6b490ed2e428425010bcb5906766c5c070d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74128dad730f7f3fcb5cd8203d86d62da3a6f67b")]
 [assembly: System.Reflection.AssemblyProductAttribute("VanHorn_NET_Final")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VanHorn_NET_Final")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
