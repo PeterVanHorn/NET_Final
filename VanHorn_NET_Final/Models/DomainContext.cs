@@ -30,9 +30,9 @@ namespace VanHorn_NET_Final.Models
                 .HasMany(q => q.Quizzes)
                 .WithOne(t => t.Teacher);
 
-            modelBuilder.Entity<Student>()
-                .HasMany(q => q.Quizzes)
-                .WithOne(s => s.Student);
+            //modelBuilder.Entity<Student>()
+            //    .HasMany(q => q.Quizzes)
+            //    .WithOne(s => s.Student);
 
             IList<Teacher> teachers = new List<Teacher>();
             teachers.Add(new Teacher() { TeacherId = 1, FirstName = "Steve", LastName = "French" });
