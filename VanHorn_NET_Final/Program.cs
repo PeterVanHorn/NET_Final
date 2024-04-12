@@ -48,6 +48,3 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.Run();
-
-
-// Test comment

@@ -20,22 +20,21 @@ namespace VanHorn_NET_Final.Models
             modelBuilder.Entity<Quiz>()
                 .HasMany(e => e.Questions)
                 .WithOne(q => q.Quiz);
-                //.HasForeignKey(e => e.QuestionId);
 
             modelBuilder.Entity<Question>()
                 .HasMany(e => e.Options)
                 .WithOne(o => o.Question);
-                //.HasForeignKey(o => o.OptionId);
 
             modelBuilder.Entity<Teacher>()
                 .HasMany(q => q.Quizzes)
                 .WithOne(t => t.Teacher);
-                //.HasForeignKey(q => q.QuizId);
 
             modelBuilder.Entity<Student>()
                 .HasMany(q => q.Quizzes)
                 .WithOne(s => s.Student);
-                //.HasForeignKey(q => q.QuizId);
+
+            IList<Student> students = new List<Student>();
+            students.Add(new Student() { StudentId = 1, firstName = "Bob", lastName = "Dole" });
         }
     }
 }
