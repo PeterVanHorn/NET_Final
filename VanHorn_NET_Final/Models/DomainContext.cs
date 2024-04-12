@@ -32,8 +32,8 @@ namespace VanHorn_NET_Final.Models
                 .WithOne(t => t.Teacher);
 
             IList<Teacher> teachers = new List<Teacher>();
-            teachers.Add(new Teacher() { TeacherId = 1, FirstName = "Steve", LastName = "French", Password = "teach1" });
-            teachers.Add(new Teacher() { TeacherId = 2, FirstName = "Mary", LastName = "Riddle", Password = "teach2" });
+            teachers.Add(new Teacher() { TeacherId = 1, FirstName = "Steve", LastName = "French" });
+            teachers.Add(new Teacher() { TeacherId = 2, FirstName = "Mary", LastName = "Riddle" });
 
             modelBuilder.Entity<Teacher>().HasData(teachers);
 
