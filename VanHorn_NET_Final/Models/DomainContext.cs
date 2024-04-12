@@ -35,7 +35,15 @@ namespace VanHorn_NET_Final.Models
 
             IList<Student> students = new List<Student>();
             students.Add(new Student() { StudentId = 1, firstName = "Bob", lastName = "Dole" });
+
+            modelBuilder.Entity<Student>().HasData(students);
+
+            IList<Teacher> teachers = new List<Teacher>();
+            teachers.Add(new Teacher() { TeacherId = 1, FirstName = "Steve", LastName = "French" });
+
+            modelBuilder.Entity<Teacher>().HasData(teachers);
         }
+        public DbSet<VanHorn_NET_Final.Models.Student> Student { get; set; } = default!;
     }
 }
 
