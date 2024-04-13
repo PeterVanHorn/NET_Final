@@ -2,3 +2,22 @@
 @model VanHorn_NET_Final.Pages.Quizzes.AttemptModel
 @{
 }
+
+@foreach(var item in Model.questionresults)
+{
+    <table class="table">
+        <tr>
+            <p>Question</p>
+            <td>@item.QuestionId @item.QuestionText</td>
+        </tr>
+        <tr>
+            @foreach (var option in Model.questionoptions)
+            {
+                <tr>
+                    <td><input id="Radio1" type="radio" name="@option.OptionId" class="rb" value="@option.OptionText" /> @option.OptionText</td>
+                </tr>
+                
+            }
+        </tr>
+    </table>
+}
