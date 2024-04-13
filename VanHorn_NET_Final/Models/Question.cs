@@ -6,5 +6,6 @@
         public string QuestionText { get; set; }
         public virtual List<Option> Options { get; set; }
         public virtual Quiz Quiz { get; set; }
+        public int? QuizId { get; set; }
     }
 }

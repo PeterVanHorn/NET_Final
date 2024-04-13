@@ -19,6 +19,9 @@
                 <input asp-for="Quiz.QuizName" class="form-control" />
                 <span asp-validation-for="Quiz.QuizName" class="text-danger"></span>
             </div>
+            <div>
+                <a asp-page="/Questions/Create">Add Question</a>
+            </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

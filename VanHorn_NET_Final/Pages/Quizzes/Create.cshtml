@@ -23,11 +23,6 @@
                 <select asp-for="Quiz.TeacherId" class="form-control" asp-items="ViewBag.TeacherId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Question.QuestionText" class="control-label"></label>
-                <input asp-for="Question.QuestionText" class="form-control" />
-                <span asp-validation-for="Question.QuestionText" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>

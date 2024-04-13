@@ -20,6 +20,7 @@ namespace VanHorn_NET_Final.Pages.Questions
 
         public IActionResult OnGet()
         {
+            ViewData["QuizId"] = new SelectList(_context.Quizzes, "QuizId", "QuizName");
             return Page();
         }
 
@@ -29,15 +30,15 @@ namespace VanHorn_NET_Final.Pages.Questions
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return Page();
+            //}
 
             _context.Questions.Add(Question);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Options/Create");
         }
     }
 }

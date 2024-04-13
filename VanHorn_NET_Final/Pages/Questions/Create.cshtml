@@ -14,24 +14,23 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
+                <label asp-for="Question.QuizId" class="control-label"></label>
+                <select asp-for="Question.QuizId" class="form-control" asp-items="ViewBag.QuizId"></select>
+            </div>
+            <div class="form-group">
                 <label asp-for="Question.QuestionText" class="control-label"></label>
                 <input asp-for="Question.QuestionText" class="form-control" />
                 <span asp-validation-for="Question.QuestionText" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Question.Options" class="control-label"></label>
-                <input asp-for="Question.Options" class="form-control" />
-                <span asp-validation-for="Question.Options" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Add options" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a asp-page="/Quizzes/Index">Back to Quizzes</a>
 </div>
 
 @section Scripts {

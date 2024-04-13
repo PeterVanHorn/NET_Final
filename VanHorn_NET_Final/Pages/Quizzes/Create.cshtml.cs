@@ -30,35 +30,35 @@ namespace VanHorn_NET_Final.Pages.Quizzes
 
         [BindProperty]
         public Quiz Quiz { get; set; } = default!;
-        public Question Question { get; set; }
+        //public Question Question { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-        //public async Task<IActionResult> OnPostAsync()
-        //{
-        //    //if (!ModelState.IsValid)
-        //    //{
-        //    //    return Page();
-        //    //}
-
-        //    _context.Quizzes.Add(Quiz);
-        //    await _context.SaveChangesAsync();
-
-        //    return RedirectToPage("./Index");
-        //}
-
         public async Task<IActionResult> OnPostAsync()
         {
             //if (!ModelState.IsValid)
             //{
             //    return Page();
             //}
-            Quiz.Questions.Add(Question);
-            _context.Questions.Add(Question);
+
             _context.Quizzes.Add(Quiz);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
         }
+
+        //public async Task<IActionResult> OnPostAsync()
+        //{
+        //    //if (!ModelState.IsValid)
+        //    //{
+        //    //    return Page();
+        //    //}
+        //    Quiz.Questions.Add(Question);
+        //    _context.Questions.Add(Question);
+        //    _context.Quizzes.Add(Quiz);
+        //    await _context.SaveChangesAsync();
+
+        //    return RedirectToPage("./Index");
+        //}
 
         // POST: Quiz/CreateWithQuestion
         //[HttpPost]

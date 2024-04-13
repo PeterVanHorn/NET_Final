@@ -6,5 +6,6 @@
         public string OptionText { get; set; }
         public bool Correct { get; set; }
         public virtual Question Question { get; set; }
+        public int? QuestionId { get; set; }
     }
 }

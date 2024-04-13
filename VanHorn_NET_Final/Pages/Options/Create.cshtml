@@ -14,6 +14,10 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
+                <label asp-for="Option.QuestionId" class="control-label"></label>
+                <select asp-for="Option.QuestionId" class="form-control" asp-items="ViewBag.QuestionId"></select>
+            </div>
+            <div class="form-group">
                 <label asp-for="Option.OptionText" class="control-label"></label>
                 <input asp-for="Option.OptionText" class="form-control" />
                 <span asp-validation-for="Option.OptionText" class="text-danger"></span>
