@@ -26,6 +26,7 @@
                 @Html.DisplayFor(modelItem => item.QuizName)
             </td>
             <td>
+                <a asp-page="./Attempt" asp-route-id="@item.QuizId">Attempt</a> |
                 <a asp-page="./Edit" asp-route-id="@item.QuizId">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.QuizId">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.QuizId">Delete</a>

@@ -10,7 +10,7 @@ using VanHorn_NET_Final.Models;
 
 namespace VanHorn_NET_Final.Pages.Quizzes
 {
-    [Authorize(Policy = "TeacherOnly")]
+    //[Authorize(Policy = "TeacherOnly")]
     public class IndexModel : PageModel
     {
         private readonly VanHorn_NET_Final.Models.DomainContext _context;
