@@ -32,84 +32,84 @@ namespace VanHorn_NET_Final.Models
                 .WithOne(t => t.Teacher);
 
             IList<Teacher> teachers = new List<Teacher>();
-            teachers.Add(new Teacher() { TeacherId = 1, FirstName = "Steve", LastName = "French" });
-            teachers.Add(new Teacher() { TeacherId = 2, FirstName = "Mary", LastName = "Riddle" });
+            teachers.Add(new Teacher() { TeacherId = 1, FirstName = "Steve", LastName = "French", Quizzes = [], Students = [] });
+            teachers.Add(new Teacher() { TeacherId = 2, FirstName = "Mary", LastName = "Riddle", Quizzes = [], Students = [] });
 
             modelBuilder.Entity<Teacher>().HasData(teachers);
 
             IList<Student> students = new List<Student>();
-            students.Add(new Student() { StudentId = 1, firstName = "Bob", lastName = "Dole", TeacherId = 1 });
-            students.Add(new Student() { StudentId = 2, firstName = "Geoffry", lastName = "Dahmer", TeacherId = 1 });
+            students.Add(new Student() { StudentId = 1, firstName = "Bob", lastName = "Dole", Quizzes = [], TeacherId = 1 });
+            students.Add(new Student() { StudentId = 2, firstName = "Geoffry", lastName = "Dahmer", Quizzes = [], TeacherId = 1 });
 
             modelBuilder.Entity<Student>().HasData(students);
 
             IList<Option> options = new List<Option>();
-            //options.Add(new Option() { OptionId = 1, OptionText = "2", QuestionId = 1 });
-            //options.Add(new Option() { OptionId = 2, OptionText = "3", QuestionId = 1 });
-            //options.Add(new Option() { OptionId = 3, OptionText = "4", QuestionId = 1 });
-            //options.Add(new Option() { OptionId = 4, OptionText = "5", QuestionId = 1 });
+            options.Add(new Option() { OptionId = 1, OptionText = "2", QuestionId = 1 });
+            options.Add(new Option() { OptionId = 2, OptionText = "3", QuestionId = 1 });
+            options.Add(new Option() { OptionId = 3, OptionText = "4", QuestionId = 1 });
+            options.Add(new Option() { OptionId = 4, OptionText = "5", QuestionId = 1 });
 
-            //modelBuilder.Entity<Option>().HasData(options);
+            modelBuilder.Entity<Option>().HasData(options);
 
             IList<Question> questions = new List<Question>();
-            //questions.Add(new Question() { QuestionId = 1, QuestionText = "1 + 1 =", QuizId = 1 });
-            //questions.Add(new Question() { QuestionId = 2, QuestionText = "2 + 2 = ", QuizId = 1 });
-            //questions.Add(new Question() { QuestionId = 3, QuestionText = "Pick a word: ", QuizId = 2 });
+            questions.Add(new Question() { QuestionId = 1, QuestionText = "1 + 1 =", Options = [], QuizId = 1 });
+            questions.Add(new Question() { QuestionId = 2, QuestionText = "2 + 2 = ", Options = [], QuizId = 1 });
+            questions.Add(new Question() { QuestionId = 3, QuestionText = "Pick a word: ", Options = [], QuizId = 2 });
 
-            //modelBuilder.Entity<Question>().HasData(questions);
+            modelBuilder.Entity<Question>().HasData(questions);
 
             IList<Quiz> quizzes = new List<Quiz>();
-            //quizzes.Add(new Quiz() { QuizId = 1, QuizName = "MathQuiz", TeacherId = 1 });
-            //quizzes.Add(new Quiz() { QuizId = 2, QuizName = "WordQuiz", TeacherId = 2 });
+            quizzes.Add(new Quiz() { QuizId = 1, QuizName = "MathQuiz", Questions = [], TeacherId = 1 });
+            quizzes.Add(new Quiz() { QuizId = 2, QuizName = "WordQuiz", Questions = [], TeacherId = 2 });
 
-            // experimental
-            Quiz q1 = new Quiz() 
-            {
-                QuizId = 1,
-                QuizName = "MathQuiz",
-                Questions = new List<Question>
-                {
-                    new Question
-                    {
-                        QuestionId = 1,
-                        QuestionText = "1 + 1 =",
-                        Options = new List<Option>
-                        {
-                            new Option
-                            {
-                                OptionId = 1,
-                                OptionText = "2",
-                                Correct = true,
-                                QuestionId = 1,
-                            },
-                            new Option
-                            {
-                                OptionId = 2,
-                                OptionText = "3",
-                                Correct = false,
-                                QuestionId = 1,
-                            },
-                            new Option
-                            {
-                                OptionId = 3,
-                                OptionText = "4",
-                                Correct = false,
-                                QuestionId = 1,
-                            },
-                            new Option
-                            {
-                                OptionId = 4,
-                                OptionText = "5",
-                                Correct = false,
-                                QuestionId = 1,
-                            },
-                        },
-                        QuizId = 1
-                    }
-                },
-                TeacherId = 1,
-            };
-            quizzes.Add(q1);
+            //// experimental
+            //Quiz q1 = new Quiz() 
+            //{
+            //    QuizId = 1,
+            //    QuizName = "MathQuiz",
+            //    Questions = new List<Question>
+            //    {
+            //        new Question
+            //        {
+            //            QuestionId = 1,
+            //            QuestionText = "1 + 1 =",
+            //            Options = new List<Option>
+            //            {
+            //                new Option
+            //                {
+            //                    OptionId = 1,
+            //                    OptionText = "2",
+            //                    Correct = true,
+            //                    QuestionId = 1,
+            //                },
+            //                new Option
+            //                {
+            //                    OptionId = 2,
+            //                    OptionText = "3",
+            //                    Correct = false,
+            //                    QuestionId = 1,
+            //                },
+            //                new Option
+            //                {
+            //                    OptionId = 3,
+            //                    OptionText = "4",
+            //                    Correct = false,
+            //                    QuestionId = 1,
+            //                },
+            //                new Option
+            //                {
+            //                    OptionId = 4,
+            //                    OptionText = "5",
+            //                    Correct = false,
+            //                    QuestionId = 1,
+            //                },
+            //            },
+            //            QuizId = 1
+            //        }
+            //    },
+            //    TeacherId = 1,
+            //};
+            //quizzes.Add(q1);
             modelBuilder.Entity<Quiz>().HasData(quizzes);
         }
     }
