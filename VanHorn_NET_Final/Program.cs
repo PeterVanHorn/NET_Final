@@ -22,8 +22,8 @@ builder.Services.AddAuthorization(Options =>
     Options.AddPolicy("TeacherOnly",
         policy => policy.RequireClaim("Teacher"));
 
-    Options.AddPolicy("MustBeTeacherType", 
-        policy => policy.RequireClaim("Type", "Teacher"));
+    //Options.AddPolicy("MustBeTeacherType", 
+    //    policy => policy.RequireClaim("Type", "Teacher"));
 });
 
 var app = builder.Build();

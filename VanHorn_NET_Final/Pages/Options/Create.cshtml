@@ -1,5 +1,5 @@
 ﻿@page
-@model VanHorn_NET_Final.Pages.Quizzes.CreateModel
+@model VanHorn_NET_Final.Pages.Options.CreateModel
 
 @{
     ViewData["Title"] = "Create";
@@ -7,20 +7,21 @@
 
 <h1>Create</h1>
 
-<h4>Quiz</h4>
+<h4>Option</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Quiz.QuizName" class="control-label"></label>
-                <input asp-for="Quiz.QuizName" class="form-control" />
-                <span asp-validation-for="Quiz.QuizName" class="text-danger"></span>
+                <label asp-for="Option.OptionText" class="control-label"></label>
+                <input asp-for="Option.OptionText" class="form-control" />
+                <span asp-validation-for="Option.OptionText" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Quiz.TeacherId" class="control-label"></label>
-                <select asp-for="Quiz.TeacherId" class="form-control" asp-items="ViewBag.TeacherId"></select>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Option.Correct" /> @Html.DisplayNameFor(model => model.Option.Correct)
+                </label>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using VanHorn_NET_Final.Models;
 
-namespace VanHorn_NET_Final.Pages.Quizzes
+namespace VanHorn_NET_Final.Pages.Students
 {
     [Authorize(Policy = "TeacherOnly")]
     public class CreateModel : PageModel
@@ -22,22 +22,21 @@ namespace VanHorn_NET_Final.Pages.Quizzes
 
         public IActionResult OnGet()
         {
-            ViewData["TeacherId"] = new SelectList(_context.Teachers, "TeacherId", "LastName");
             return Page();
         }
 
         [BindProperty]
-        public Quiz Quiz { get; set; } = default!;
+        public Student Student { get; set; } = default!;
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    return Page();
-            //}
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
 
-            _context.Quizzes.Add(Quiz);
+            _context.Student.Add(Student);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
