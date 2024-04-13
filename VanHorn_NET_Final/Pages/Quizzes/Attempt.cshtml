@@ -11,7 +11,7 @@
             <td>@item.QuestionId @item.QuestionText</td>
         </tr>
         <tr>
-            @foreach (var option in Model.questionoptions)
+            @foreach (var option in item.Options)
             {
                 <tr>
                     <td><input id="Radio1" type="radio" name="@option.OptionId" class="rb" value="@option.OptionText" /> @option.OptionText</td>

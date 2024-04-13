@@ -16,13 +16,9 @@ namespace VanHorn_NET_Final.Pages.Quizzes
             _context = context;
         }
         public IEnumerable<Question> questionresults { get; set; }
-        public IEnumerable<Option> questionoptions { get; set; }
         public async Task OnGet()
         {
             questionresults = await _context.Questions.ToListAsync();
-            questionoptions = await _context.Options.ToListAsync();
         }
-
-        // <input id = "Radio1" type="radio" name="@item.QuestionId" class="rb" value="@item.Options[0]"/>
     }
 }

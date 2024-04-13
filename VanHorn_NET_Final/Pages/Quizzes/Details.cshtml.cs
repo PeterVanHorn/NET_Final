@@ -21,11 +21,11 @@ namespace VanHorn_NET_Final.Pages.Quizzes
         }
 
         public Quiz Quiz { get; set; } = default!;
-        public IList<Question> Question { get; set; } = default!;
+        //public IList<Question> Question { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            Question = await _context.Questions.ToListAsync();
+            //Question = await _context.Questions.ToListAsync();
             if (id == null)
             {
                 return NotFound();
