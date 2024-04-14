@@ -62,54 +62,6 @@ namespace VanHorn_NET_Final.Models
             quizzes.Add(new Quiz() { QuizId = 1, QuizName = "MathQuiz", Questions = [], TeacherId = 1 });
             quizzes.Add(new Quiz() { QuizId = 2, QuizName = "WordQuiz", Questions = [], TeacherId = 2 });
 
-            //// experimental
-            //Quiz q1 = new Quiz() 
-            //{
-            //    QuizId = 1,
-            //    QuizName = "MathQuiz",
-            //    Questions = new List<Question>
-            //    {
-            //        new Question
-            //        {
-            //            QuestionId = 1,
-            //            QuestionText = "1 + 1 =",
-            //            Options = new List<Option>
-            //            {
-            //                new Option
-            //                {
-            //                    OptionId = 1,
-            //                    OptionText = "2",
-            //                    Correct = true,
-            //                    QuestionId = 1,
-            //                },
-            //                new Option
-            //                {
-            //                    OptionId = 2,
-            //                    OptionText = "3",
-            //                    Correct = false,
-            //                    QuestionId = 1,
-            //                },
-            //                new Option
-            //                {
-            //                    OptionId = 3,
-            //                    OptionText = "4",
-            //                    Correct = false,
-            //                    QuestionId = 1,
-            //                },
-            //                new Option
-            //                {
-            //                    OptionId = 4,
-            //                    OptionText = "5",
-            //                    Correct = false,
-            //                    QuestionId = 1,
-            //                },
-            //            },
-            //            QuizId = 1
-            //        }
-            //    },
-            //    TeacherId = 1,
-            //};
-            //quizzes.Add(q1);
             modelBuilder.Entity<Quiz>().HasData(quizzes);
         }
     }

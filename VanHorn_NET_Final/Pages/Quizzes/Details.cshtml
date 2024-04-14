@@ -22,8 +22,8 @@
         <thead>
             <tr>
                 <th>
+                    Questions
                 </th>
-                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -32,6 +32,16 @@
                 <tr>
                     <td>
                         @item.QuestionText
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            @foreach (var opt in item.Options)
+                            {
+                                <li>@opt.OptionText</li>
+                            }
+                        </ul>
                     </td>
                 </tr>
             }
