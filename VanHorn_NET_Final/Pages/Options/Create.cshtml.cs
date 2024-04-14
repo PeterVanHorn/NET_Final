@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -9,6 +10,7 @@ using VanHorn_NET_Final.Models;
 
 namespace VanHorn_NET_Final.Pages.Options
 {
+    [Authorize(Policy = "TeacherOnly")]
     public class CreateModel : PageModel
     {
         private readonly VanHorn_NET_Final.Models.DomainContext _context;

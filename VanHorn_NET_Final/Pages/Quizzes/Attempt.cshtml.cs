@@ -6,8 +6,6 @@ using VanHorn_NET_Final.Pages.Account;
 
 namespace VanHorn_NET_Final.Pages.Quizzes
 {
-    // 16 for this page layout
-    // 21 minutes for html layout
     public class AttemptModel : PageModel
     {
         private readonly DomainContext _context;
