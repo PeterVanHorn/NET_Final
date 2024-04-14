@@ -20,38 +20,44 @@
             @{
                 int questionNum = 1;
             }
-            @foreach (var item in Model.Quiz.Questions)
-            {
-                <tr>
-                    <td>
-                        Question @questionNum
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        @item.QuestionText
-                    </td>
-                </tr>
-                questionNum++;
-                <tr>
-                    <td>
-                        @if (item.Options != null)
+            <tr>
+                <td>
+                    @if (Model.Quiz.Questions != null)
+                    {
+                        <header>Questions</header>
+                        @foreach (var item in Model.Quiz.Questions)
                         {
-                            <header>Options</header>
                             <ul>
-                                @foreach (var opt in item.Options)
-                                {
-                                    <li>@opt.OptionText, @opt.Correct</li>
-                                }
+                                <li>
+                                    Question @questionNum: @item.QuestionText
+                                    @if (item.Options != null)
+                                    {
+                                        <header>Options</header>
+                                        <ul>
+                                            @foreach (var opt in item.Options)
+                                            {
+                                                <li>@opt.OptionText, @opt.Correct</li>
+                                            }
+                                        </ul>
+                                    }
+                                    else
+                                    {
+                                        <p>No options exist for this question.</p>
+                                    }
+                                </li>
+                                @{
+                                    questionNum++;
+                                 }
                             </ul>
                         }
-                        else
-                        {
-                            <p>No options exist for this question.</p>
-                        }
-                    </td>
-                </tr>
-            }
+                    }
+                    else
+                    {
+                        <p>No questions exist for this quiz</p>
+                    }
+                </td>
+            </tr>
+            
         </tbody>
     </table>
 </div>

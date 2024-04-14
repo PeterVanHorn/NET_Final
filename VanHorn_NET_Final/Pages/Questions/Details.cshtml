@@ -20,15 +20,27 @@
             @{
                 int optionNum = 1;
             }
-            @foreach (var item in Model.Question.Options)
-            {
-                <tr>
-                    <td>
-                        Option @optionNum: @item.OptionText @item.Correct
-                    </td>
-                </tr>
-                optionNum++;
-            }
+            <tr>
+                <td>
+                    @if (Model.Question.Options != null)
+                    {
+                        @foreach (var item in Model.Question.Options)
+                        {
+                            <header>Options</header>
+                            <ul>
+                                <li>Option @optionNum: @item.OptionText @item.Correct</li>
+                                @{
+                                    optionNum++;
+                                }
+                            </ul>
+                        }
+                    }
+                    else
+                    {
+                        <p>No options exist for this question</p>
+                    }
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>
