@@ -21,19 +21,17 @@ namespace VanHorn_NET_Final.Pages.Questions
         {
             _context = context;
         }
-
-        public IActionResult OnGet()
+        public IActionResult OnGet(int quizId)
         {
-            ViewData["QuizId"] = new SelectList(_context.Quizzes, "QuizId", "QuizName");
-            Question = new Question
-            {
-                Options = new List<Option>() // Initialize options list
-            };
+            QuizId = quizId;
             return Page();
         }
 
         [BindProperty]
         public Question Question { get; set; } = default!;
+
+        [BindProperty]
+        public int QuizId { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -42,10 +40,16 @@ namespace VanHorn_NET_Final.Pages.Questions
             //{
             //    return Page();
             //}
-            _context.Questions.Add(Question);
+            Question question = new Question
+            {
+                QuizId = QuizId,
+                QuestionText = Question.QuestionText
+            };
+
+            _context.Questions.Add(question);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Options/Create", new { questionId = Question.QuestionId});
         }
     }
 }

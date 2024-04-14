@@ -9,15 +9,12 @@
 
 <hr />
 <form method="post">
+    <input type="hidden" asp-item="ViewData.quizId" />
+
     <div class="form-group">
         <label for="questionText">Question Text</label>
         <input type="text" class="form-control" id="questionText" asp-for="Question.QuestionText">
     </div>
-
-    <h4>Options</h4>
-    <div id="optionsContainer"></div>
-
-    <button type="button" class="btn btn-primary" id="addOptionBtn">Add Option</button>
 
     <button type="submit" class="btn btn-success">Create Question</button>
 </form>
@@ -28,20 +25,4 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-
-
-    <script>
-        var optionIndex = 0;
-
-        $("#addOptionBtn").click(function () {
-            var optionHtml = `
-                <div class="form-group">
-                    <label for="Options_${optionIndex}__OptionText">Option ${optionIndex + 1}</label>
-                    <input type="text" class="form-control" id="Options_${optionIndex}__OptionText" name="Options[${optionIndex}].OptionText">
-                </div>
-            `;
-            $("#optionsContainer").append(optionHtml);
-            optionIndex++;
-        });
-    </script>
 }

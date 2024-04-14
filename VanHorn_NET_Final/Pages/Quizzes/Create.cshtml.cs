@@ -32,7 +32,6 @@ namespace VanHorn_NET_Final.Pages.Quizzes
 
         [BindProperty]
         public Quiz Quiz { get; set; } = default!;
-        //public Question Question { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -42,35 +41,12 @@ namespace VanHorn_NET_Final.Pages.Quizzes
             //    return Page();
             //}
 
+            //var quiz = new Quiz { QuizName = Quiz.QuizName };
+
             _context.Quizzes.Add(Quiz);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Questions/Create", new { quizId = Quiz.QuizId});
         }
-
-        //public async Task<IActionResult> OnPostAsync()
-        //{
-        //    //if (!ModelState.IsValid)
-        //    //{
-        //    //    return Page();
-        //    //}
-        //    Quiz.Questions.Add(Question);
-        //    _context.Questions.Add(Question);
-        //    _context.Quizzes.Add(Quiz);
-        //    await _context.SaveChangesAsync();
-
-        //    return RedirectToPage("./Index");
-        //}
-
-        // POST: Quiz/CreateWithQuestion
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public IActionResult CreateWithQuestion(QuizWithQuestion qwq)
-        //{
-        //    _context.Add(qwq.Question);
-        //    qwq.Quiz.Questions.Add(qwq.Question);
-        //    _context.Add(qwq.Quiz);
-        //    return RedirectToAction(nameof(Index));
-        //}
     }
 }
