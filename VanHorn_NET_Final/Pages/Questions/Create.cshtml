@@ -5,29 +5,22 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Create Question</h1>
 
-<h4>Question</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Question.QuizId" class="control-label"></label>
-                <select asp-for="Question.QuizId" class="form-control" asp-items="ViewBag.QuizId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Question.QuestionText" class="control-label"></label>
-                <input asp-for="Question.QuestionText" class="form-control" />
-                <span asp-validation-for="Question.QuestionText" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Add options" class="btn btn-primary" />
-            </div>
-        </form>
+<form method="post">
+    <div class="form-group">
+        <label for="questionText">Question Text</label>
+        <input type="text" class="form-control" id="questionText" asp-for="Question.QuestionText">
     </div>
-</div>
+
+    <h4>Options</h4>
+    <div id="optionsContainer"></div>
+
+    <button type="button" class="btn btn-primary" id="addOptionBtn">Add Option</button>
+
+    <button type="submit" class="btn btn-success">Create Question</button>
+</form>
 
 <div>
     <a asp-page="/Quizzes/Index">Back to Quizzes</a>
@@ -35,4 +28,20 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+
+    <script>
+        var optionIndex = 0;
+
+        $("#addOptionBtn").click(function () {
+            var optionHtml = `
+                <div class="form-group">
+                    <label for="Options_${optionIndex}__OptionText">Option ${optionIndex + 1}</label>
+                    <input type="text" class="form-control" id="Options_${optionIndex}__OptionText" name="Options[${optionIndex}].OptionText">
+                </div>
+            `;
+            $("#optionsContainer").append(optionHtml);
+            optionIndex++;
+        });
+    </script>
 }
