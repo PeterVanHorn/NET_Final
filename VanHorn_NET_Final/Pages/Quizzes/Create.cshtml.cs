@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using VanHorn_NET_Final.Models;
 
 // maybe consider adding questions in the quiz editing section?
+// probably create quizzes, questions and options all at once?
+// with Question/create page, the option exists to create the options too but the options are not saved!
 
 namespace VanHorn_NET_Final.Pages.Quizzes
 {
