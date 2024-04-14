@@ -44,10 +44,10 @@ namespace VanHorn_NET_Final.Models
             modelBuilder.Entity<Student>().HasData(students);
 
             IList<Option> options = new List<Option>();
-            options.Add(new Option() { OptionId = 1, OptionText = "2", QuestionId = 1 });
-            options.Add(new Option() { OptionId = 2, OptionText = "3", QuestionId = 1 });
-            options.Add(new Option() { OptionId = 3, OptionText = "4", QuestionId = 1 });
-            options.Add(new Option() { OptionId = 4, OptionText = "5", QuestionId = 1 });
+            options.Add(new Option() { OptionId = 1, OptionText = "2", Correct = true, QuestionId = 1 });
+            options.Add(new Option() { OptionId = 2, OptionText = "3", Correct = false, QuestionId = 1 });
+            options.Add(new Option() { OptionId = 3, OptionText = "4", Correct = false, QuestionId = 1 });
+            options.Add(new Option() { OptionId = 4, OptionText = "5", Correct = false, QuestionId = 1 });
 
             modelBuilder.Entity<Option>().HasData(options);
 

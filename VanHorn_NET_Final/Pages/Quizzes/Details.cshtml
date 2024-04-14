@@ -11,37 +11,44 @@
     <h4>Quiz</h4>
     <hr />
     <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Quiz.QuizName)
-        </dt>
         <dd class="col-sm-10">
             @Model.Quiz.QuizName
         </dd>
     </dl>
     <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    Questions
-                </th>
-            </tr>
-        </thead>
         <tbody>
+            @{
+                int questionNum = 1;
+            }
             @foreach (var item in Model.Quiz.Questions)
             {
+                <tr>
+                    <td>
+                        Question @questionNum
+                    </td>
+                </tr>
                 <tr>
                     <td>
                         @item.QuestionText
                     </td>
                 </tr>
+                questionNum++;
                 <tr>
                     <td>
-                        <ul>
-                            @foreach (var opt in item.Options)
-                            {
-                                <li>@opt.OptionText</li>
-                            }
-                        </ul>
+                        @if (item.Options != null)
+                        {
+                            <header>Options</header>
+                            <ul>
+                                @foreach (var opt in item.Options)
+                                {
+                                    <li>@opt.OptionText, @opt.Correct</li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <p>No options exist for this question.</p>
+                        }
                     </td>
                 </tr>
             }
