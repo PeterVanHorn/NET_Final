@@ -3,7 +3,7 @@
 @{
 }
 
-@foreach(var item in Model.questionresults)
+@foreach(var item in Model.Questions)
 {
     <table class="table">
         <tr>
@@ -14,9 +14,9 @@
             @foreach (var option in item.Options)
             {
                 <tr>
-                    <td><input id="Radio1" type="radio" name="@option.OptionId" class="rb" value="@option.OptionText" /> @option.OptionText</td>
+                <td>< input id="Radio1" type="radio" name="@option.OptionId" class="rb" value="@option.OptionText"/> @option.OptionText </td>
                 </tr>
-                
+
             }
         </tr>
     </table>

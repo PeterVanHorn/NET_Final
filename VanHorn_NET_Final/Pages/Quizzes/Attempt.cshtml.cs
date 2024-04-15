@@ -13,10 +13,18 @@ namespace VanHorn_NET_Final.Pages.Quizzes
         {
             _context = context;
         }
-        public IEnumerable<Question> questionresults { get; set; }
-        public async Task OnGet()
+        public IEnumerable<Question> Questions { get; set; }
+        public IEnumerable<Option> Options { get; set; }
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
-            questionresults = await _context.Questions.ToListAsync();
+            Questions = await _context.Questions.ToListAsync();
+            Options = await _context.Options.ToListAsync();
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+            return Page();
         }
     }
 }

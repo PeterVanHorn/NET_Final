@@ -49,6 +49,7 @@ namespace VanHorn_NET_Final.Pages.Options
             //    return Page();
             //}
             Option.QuestionId = questionId;
+
             _context.Attach(Option).State = EntityState.Modified;
 
             try
@@ -66,10 +67,8 @@ namespace VanHorn_NET_Final.Pages.Options
                     throw;
                 }
             }
-
             return RedirectToPage("./Index");
         }
-
         private bool OptionExists(int id)
         {
             return _context.Options.Any(e => e.OptionId == id);

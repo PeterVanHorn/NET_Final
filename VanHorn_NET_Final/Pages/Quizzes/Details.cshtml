@@ -37,9 +37,12 @@
                                         <ul>
                                             @foreach (var opt in item.Options)
                                             {
-                                                <li>@opt.OptionText, @opt.Correct</li>
-                                                int? questionId = opt.QuestionId;
-                                                <a asp-page="/Options/Edit" asp-route-quizId="@questionId" asp-route-id="@opt.OptionId">Edit Option</a>
+                                                <li>@opt.OptionText, @opt.Correct
+                                                    @{
+                                                        int? questionId = opt.QuestionId;
+                                                    }
+                                                    <a asp-page="/Options/Edit" asp-route-quizId="@questionId" asp-route-id="@opt.OptionId"> Edit Option </a>
+                                                </li>
                                             }
                                         </ul>
                                     }

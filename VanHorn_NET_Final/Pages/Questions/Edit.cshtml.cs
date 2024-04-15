@@ -23,9 +23,11 @@ namespace VanHorn_NET_Final.Pages.Questions
 
         [BindProperty]
         public Question Question { get; set; } = default!;
+        public IList<Option> Options { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            Options = await _context.Options.ToListAsync();
             if (id == null)
             {
                 return NotFound();
@@ -67,10 +69,8 @@ namespace VanHorn_NET_Final.Pages.Questions
                     throw;
                 }
             }
-
             return RedirectToPage("/Options/Create", new { questionId = Question.QuestionId });
         }
-
         private bool QuestionExists(int id)
         {
             return _context.Questions.Any(e => e.QuestionId == id);
