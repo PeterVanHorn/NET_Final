@@ -24,6 +24,7 @@ namespace VanHorn_NET_Final.Pages.Questions
 
         public async Task OnGetAsync()
         {
+            _context.Database.EnsureCreated();
             Question = await _context.Questions.ToListAsync();
         }
     }

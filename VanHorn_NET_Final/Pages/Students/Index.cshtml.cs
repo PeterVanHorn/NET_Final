@@ -24,6 +24,7 @@ namespace VanHorn_NET_Final.Pages.Students
 
         public async Task OnGetAsync()
         {
+            _context.Database.EnsureCreated();
             Student = await _context.Student.ToListAsync();
         }
     }

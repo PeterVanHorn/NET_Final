@@ -24,6 +24,7 @@ namespace VanHorn_NET_Final.Pages.Options
 
         public async Task OnGetAsync()
         {
+            _context.Database.EnsureCreated();
             Option = await _context.Options.ToListAsync();
         }
     }
