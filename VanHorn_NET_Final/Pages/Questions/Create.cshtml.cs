@@ -21,9 +21,8 @@ namespace VanHorn_NET_Final.Pages.Questions
         {
             _context = context;
         }
-        public IActionResult OnGet(int quizId)
+        public IActionResult OnGet()
         {
-            QuizId = quizId;
             return Page();
         }
 
@@ -34,7 +33,7 @@ namespace VanHorn_NET_Final.Pages.Questions
         public int QuizId { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int quizId)
         {
             //if (!ModelState.IsValid)
             //{
@@ -42,34 +41,14 @@ namespace VanHorn_NET_Final.Pages.Questions
             //}
             Question question = new Question
             {
-                QuizId = QuizId,
+                QuizId = quizId,
                 QuestionText = Question.QuestionText
             };
 
             _context.Questions.Add(question);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("/Options/Create", new { questionId = Question.QuestionId});
+            return RedirectToPage("/Options/Create", new { questionId = question.QuestionId});
         }
     }
 }
-
-//< div class= "row" >
-//    < div class= "col-md-4" >
-//        < form method = "post" >
-//            < div asp - validation - summary = "ModelOnly" class= "text-danger" ></ div >
-//            < div class= "form-group" >
-//                < label asp -for= "Question.QuizId" class= "control-label" ></ label >
-//                < select asp -for= "Question.QuizId" class= "form-control" asp - items = "ViewBag.QuizId" ></ select >
-//            </ div >
-//            < div class= "form-group" >
-//                < label asp -for= "Question.QuestionText" class= "control-label" ></ label >
-//                < input asp -for= "Question.QuestionText" class= "form-control" />
-//                < span asp - validation -for= "Question.QuestionText" class= "text-danger" ></ span >
-//            </ div >
-//            < div class= "form-group" >
-//                < input type = "submit" value = "Add options" class= "btn btn-primary" />
-//            </ div >
-//        </ form >
-//    </ div >
-//</ div >

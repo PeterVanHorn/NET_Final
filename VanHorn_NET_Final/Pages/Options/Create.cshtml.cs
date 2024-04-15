@@ -22,22 +22,31 @@ namespace VanHorn_NET_Final.Pages.Options
 
         public IActionResult OnGet()
         {
-            ViewData["QuestionId"] = new SelectList(_context.Questions, "QuestionId", "QuestionText");
             return Page();
         }
 
         [BindProperty]
         public Option Option { get; set; } = default!;
 
+        [BindProperty]
+        public int QuestionId { get; set; }
+
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int questionId)
         {
             //if (!ModelState.IsValid)
             //{
             //    return Page();
             //}
 
-            _context.Options.Add(Option);
+            Option option = new Option
+            {
+                QuestionId = questionId,
+                OptionText = Option.OptionText,
+                Correct = Option.Correct
+            };
+
+            _context.Options.Add(option);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("/Quizzes/Index");

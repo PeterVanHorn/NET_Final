@@ -9,14 +9,14 @@
 
 <hr />
 <form method="post">
-    <input type="hidden" asp-item="ViewData.quizId" />
-
     <div class="form-group">
         <label for="questionText">Question Text</label>
         <input type="text" class="form-control" id="questionText" asp-for="Question.QuestionText">
     </div>
 
-    <button type="submit" class="btn btn-success">Create Question</button>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
 </form>
 
 <div>
