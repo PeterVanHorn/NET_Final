@@ -14,7 +14,7 @@
         <dd class="col-sm-10">
             @Model.Quiz.QuizName
         </dd>
-        <a asp-page="./Edit" asp-route-id="@Model.Quiz.QuizId">Edit</a>
+        <a asp-page="./Edit" asp-route-id="@Model.Quiz.QuizId">Edit Quiz</a>
     </dl>
     <table class="table">
         <tbody>
@@ -38,6 +38,8 @@
                                             @foreach (var opt in item.Options)
                                             {
                                                 <li>@opt.OptionText, @opt.Correct</li>
+                                                int? questionId = opt.QuestionId;
+                                                <a asp-page="/Options/Edit" asp-route-quizId="@questionId" asp-route-id="@opt.OptionId">Edit Option</a>
                                             }
                                         </ul>
                                     }
@@ -45,7 +47,10 @@
                                     {
                                         <p>No options exist for this question.</p>
                                     }
-                                    <a asp-page="/Questions/Edit" asp-route-quizId="@Model.Quiz.QuizId" asp-route-id="@item.QuestionId">Edit Question</a>
+                                    @{
+                                        int quizId = Model.Quiz.QuizId;
+                                    }
+                                    <a asp-page="/Questions/Edit" asp-route-quizId="@quizId" asp-route-id="@item.QuestionId">Edit Question</a>
                                 </li>
                                 @{
                                     questionNum++;

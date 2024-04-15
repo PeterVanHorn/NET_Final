@@ -42,12 +42,13 @@ namespace VanHorn_NET_Final.Pages.Questions
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int quizId)
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return Page();
+            //}
+            Question.QuizId = quizId;
 
             _context.Attach(Question).State = EntityState.Modified;
 
@@ -67,7 +68,7 @@ namespace VanHorn_NET_Final.Pages.Questions
                 }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Options/Create", new { questionId = Question.QuestionId });
         }
 
         private bool QuestionExists(int id)
