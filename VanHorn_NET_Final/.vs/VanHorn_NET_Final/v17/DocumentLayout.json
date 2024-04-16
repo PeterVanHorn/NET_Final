@@ -9,18 +9,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|c:\\githubrepos\\net_final\\vanhorn_net_final\\pages\\quizzes\\attempt.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|solutionrelative:pages\\quizzes\\attempt.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|c:\\githubrepos\\net_final\\vanhorn_net_final\\pages\\quizzes\\details.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|solutionrelative:pages\\quizzes\\details.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|c:\\githubrepos\\net_final\\vanhorn_net_final\\pages\\quizzes\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|solutionrelative:pages\\quizzes\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|c:\\githubrepos\\net_final\\vanhorn_net_final\\models\\submission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|solutionrelative:models\\submission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,21 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 209,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Attempt.cshtml.cs",
-              "DocumentMoniker": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Quizzes\\Attempt.cshtml.cs",
-              "RelativeDocumentMoniker": "Pages\\Quizzes\\Attempt.cshtml.cs",
-              "ToolTip": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Quizzes\\Attempt.cshtml.cs",
-              "RelativeToolTip": "Pages\\Quizzes\\Attempt.cshtml.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABEAAAA8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T03:35:32.039Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -53,9 +28,9 @@
               "RelativeDocumentMoniker": "Pages\\Quizzes\\Attempt.cshtml",
               "ToolTip": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Quizzes\\Attempt.cshtml",
               "RelativeToolTip": "Pages\\Quizzes\\Attempt.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAxAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAABMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-15T03:35:31.423Z",
+              "WhenOpened": "2024-04-16T18:22:29.531Z",
               "EditorCaption": ""
             }
           ]
@@ -66,41 +41,15 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Details.cshtml.cs",
-              "DocumentMoniker": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Quizzes\\Details.cshtml.cs",
-              "RelativeDocumentMoniker": "Pages\\Quizzes\\Details.cshtml.cs",
-              "ToolTip": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Quizzes\\Details.cshtml.cs",
-              "RelativeToolTip": "Pages\\Quizzes\\Details.cshtml.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAgwDQAAAABAAAA",
+              "DocumentIndex": 1,
+              "Title": "Attempt.cshtml.cs",
+              "DocumentMoniker": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Quizzes\\Attempt.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Quizzes\\Attempt.cshtml.cs",
+              "ToolTip": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Quizzes\\Attempt.cshtml.cs",
+              "RelativeToolTip": "Pages\\Quizzes\\Attempt.cshtml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T03:40:54.225Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Quizzes\\Details.cshtml",
-              "RelativeDocumentMoniker": "Pages\\Quizzes\\Details.cshtml",
-              "ToolTip": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Quizzes\\Details.cshtml",
-              "RelativeToolTip": "Pages\\Quizzes\\Details.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-15T03:40:53.627Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Submission.cs",
-              "DocumentMoniker": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Models\\Submission.cs",
-              "RelativeDocumentMoniker": "Models\\Submission.cs",
-              "ToolTip": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Models\\Submission.cs",
-              "RelativeToolTip": "Models\\Submission.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T03:32:36.672Z",
+              "WhenOpened": "2024-04-16T19:18:09.36Z",
               "EditorCaption": ""
             }
           ]

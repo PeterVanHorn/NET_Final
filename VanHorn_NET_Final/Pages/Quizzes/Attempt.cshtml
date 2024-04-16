@@ -3,21 +3,34 @@
 @{
 }
 
-@foreach(var item in Model.Questions)
-{
-    <table class="table">
-        <tr>
-            <p>Question</p>
-            <td>@item.QuestionId @item.QuestionText</td>
-        </tr>
-        <tr>
-            @foreach (var option in item.Options)
-            {
-                <tr>
-                <td>< input id="Radio1" type="radio" name="@option.OptionId" class="rb" value="@option.OptionText"/> @option.OptionText </td>
-                </tr>
 
-            }
-        </tr>
-    </table>
+<dl class="row">
+    <h4>
+        @if (Model.Questions.Count > 0)
+        {
+            <p>Question Number @Model.Questions[0].QuestionId</p>
+        }
+    </h4>
+</dl>
+<table class="table">
+    <tbody>
+        @if (Model.Questions.Count > 0)
+        {
+            <header> @Html.DisplayFor(model => model.Questions[0].QuestionText) </header>
+            <ul>
+                @foreach (var opt in Model.Questions[0].Options)
+                {
+                    <li>
+                        <input id="@opt.OptionId" type="radio" name="options" class="rb" value="@opt.OptionText" />
+                        <label for="" @opt.OptionId>@opt.OptionText </label>
+                    </li>
+                }
+            </ul>
+        }
+    </tbody>
+</table>
+
+@if (Model.Questions.Count > 1)
+{
+    <button id="nextBtn" class="btn btn-primary">Next Question</button>
 }

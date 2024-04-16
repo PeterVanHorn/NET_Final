@@ -14,6 +14,7 @@
         question Id: @Model.Option.QuestionId
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Option.QuestionId" />
             <input type="hidden" asp-for="Option.OptionId" />
             <div class="form-group">
                 <label asp-for="Option.OptionText" class="control-label"></label>
