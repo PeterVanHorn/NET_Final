@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Azure;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using VanHorn_NET_Final.Models;
 
-namespace VanHorn_NET_Final.Pages.Quizzes
+namespace VanHorn_NET_Final.Pages.Submissions
 {
-    //[Authorize(Policy = "TeacherOnly")]
     public class IndexModel : PageModel
     {
         private readonly VanHorn_NET_Final.Models.DomainContext _context;
@@ -22,13 +18,12 @@ namespace VanHorn_NET_Final.Pages.Quizzes
             _context = context;
         }
 
-        public IList<Quiz> Quiz { get;set; } = default!;
+        public IList<Submission> Submission { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            _context.Database.EnsureCreated();
-            Quiz = await _context.Quizzes.ToListAsync();
+            Submission = await _context.Submission
+                .Include(s => s.Student).ToListAsync();
         }
     }
 }
-//< a asp - page = "./Attempt" asp - route - id = "@item.QuizId" > Attempt </ a >

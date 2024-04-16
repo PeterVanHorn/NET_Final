@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using VanHorn_NET_Final.Models;
 
-namespace VanHorn_NET_Final.Pages.Students
+namespace VanHorn_NET_Final.Pages.Submissions
 {
     public class DetailsModel : PageModel
     {
@@ -18,7 +18,7 @@ namespace VanHorn_NET_Final.Pages.Students
             _context = context;
         }
 
-        public Student Student { get; set; } = default!;
+        public Submission Submission { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -27,14 +27,14 @@ namespace VanHorn_NET_Final.Pages.Students
                 return NotFound();
             }
 
-            var student = await _context.Student.FirstOrDefaultAsync(m => m.StudentId == id);
-            if (student == null)
+            var submission = await _context.Submission.FirstOrDefaultAsync(m => m.SubId == id);
+            if (submission == null)
             {
                 return NotFound();
             }
             else
             {
-                Student = student;
+                Submission = submission;
             }
             return Page();
         }

@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using VanHorn_NET_Final.Models;
 
-namespace VanHorn_NET_Final.Pages.Students
+namespace VanHorn_NET_Final.Pages.Submissions
 {
     public class CreateModel : PageModel
     {
@@ -17,28 +18,28 @@ namespace VanHorn_NET_Final.Pages.Students
         {
             _context = context;
         }
-
         public IActionResult OnGet()
         {
-        ViewData["TeacherId"] = new SelectList(_context.Teachers, "TeacherId", "TeacherId");
+            ViewData["StudentId"] = new SelectList(_context.Student, "StudentId", "lastName");
+
             return Page();
         }
 
         [BindProperty]
-        public Student Student { get; set; } = default!;
+        public Submission Submission { get; set; } = default!;
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return Page();
+            //}
 
-            _context.Student.Add(Student);
+            _context.Submission.Add(Submission);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Submissions/Edit", new { subId = Submission.SubId });
         }
     }
 }

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using VanHorn_NET_Final.Models;
 
-namespace VanHorn_NET_Final.Pages.Students
+namespace VanHorn_NET_Final.Pages.Submissions
 {
     public class DeleteModel : PageModel
     {
@@ -19,7 +19,7 @@ namespace VanHorn_NET_Final.Pages.Students
         }
 
         [BindProperty]
-        public Student Student { get; set; } = default!;
+        public Submission Submission { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,15 +28,15 @@ namespace VanHorn_NET_Final.Pages.Students
                 return NotFound();
             }
 
-            var student = await _context.Student.FirstOrDefaultAsync(m => m.StudentId == id);
+            var submission = await _context.Submission.FirstOrDefaultAsync(m => m.SubId == id);
 
-            if (student == null)
+            if (submission == null)
             {
                 return NotFound();
             }
             else
             {
-                Student = student;
+                Submission = submission;
             }
             return Page();
         }
@@ -48,11 +48,11 @@ namespace VanHorn_NET_Final.Pages.Students
                 return NotFound();
             }
 
-            var student = await _context.Student.FindAsync(id);
-            if (student != null)
+            var submission = await _context.Submission.FindAsync(id);
+            if (submission != null)
             {
-                Student = student;
-                _context.Student.Remove(Student);
+                Submission = submission;
+                _context.Submission.Remove(Submission);
                 await _context.SaveChangesAsync();
             }
 

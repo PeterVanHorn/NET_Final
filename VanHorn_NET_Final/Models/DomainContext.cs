@@ -31,6 +31,10 @@ namespace VanHorn_NET_Final.Models
                 .HasMany(q => q.Quizzes)
                 .WithOne(t => t.Teacher);
 
+            modelBuilder.Entity<Student>()
+                .HasMany(a => a.Submissions)
+                .WithOne(s => s.Student);
+
             IList<Teacher> teachers = new List<Teacher>();
             teachers.Add(new Teacher() { TeacherId = 1, FirstName = "Steve", LastName = "French", Quizzes = [], Students = [] });
             teachers.Add(new Teacher() { TeacherId = 2, FirstName = "Mary", LastName = "Riddle", Quizzes = [], Students = [] });
@@ -38,8 +42,8 @@ namespace VanHorn_NET_Final.Models
             modelBuilder.Entity<Teacher>().HasData(teachers);
 
             IList<Student> students = new List<Student>();
-            students.Add(new Student() { StudentId = 1, firstName = "Bob", lastName = "Dole", Quizzes = [], TeacherId = 1 });
-            students.Add(new Student() { StudentId = 2, firstName = "Geoffry", lastName = "Dahmer", Quizzes = [], TeacherId = 1 });
+            students.Add(new Student() { StudentId = 1, firstName = "Bob", lastName = "Dole", Submissions = [], TeacherId = 1 });
+            students.Add(new Student() { StudentId = 2, firstName = "Geoffry", lastName = "Dahmer", Submissions = [], TeacherId = 1 });
 
             modelBuilder.Entity<Student>().HasData(students);
 
@@ -64,6 +68,7 @@ namespace VanHorn_NET_Final.Models
 
             modelBuilder.Entity<Quiz>().HasData(quizzes);
         }
+        public DbSet<VanHorn_NET_Final.Models.Submission> Submission { get; set; } = default!;
     }
 }
 

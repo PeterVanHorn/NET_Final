@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using VanHorn_NET_Final.Models;
 
-namespace VanHorn_NET_Final.Pages.Students
+namespace VanHorn_NET_Final.Pages.Submissions
 {
     public class EditModel : PageModel
     {
@@ -20,22 +20,26 @@ namespace VanHorn_NET_Final.Pages.Students
         }
 
         [BindProperty]
-        public Student Student { get; set; } = default!;
+        public Submission Submission { get; set; } = default!;
+        public IList<Question> Questions { get; set; }
+        public IList<Option> Options { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            Questions = await _context.Questions.ToListAsync();
+            Options = await _context.Options.ToListAsync();
             if (id == null)
             {
                 return NotFound();
             }
 
-            var student =  await _context.Student.FirstOrDefaultAsync(m => m.StudentId == id);
-            if (student == null)
+            var submission =  await _context.Submission.FirstOrDefaultAsync(m => m.SubId == id);
+            if (submission == null)
             {
                 return NotFound();
             }
-            Student = student;
-           ViewData["TeacherId"] = new SelectList(_context.Teachers, "TeacherId", "TeacherId");
+            Submission = submission;
+           ViewData["StudentId"] = new SelectList(_context.Student, "StudentId", "StudentId");
             return Page();
         }
 
@@ -43,12 +47,12 @@ namespace VanHorn_NET_Final.Pages.Students
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return Page();
+            //}
 
-            _context.Attach(Student).State = EntityState.Modified;
+            _context.Attach(Submission).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +60,7 @@ namespace VanHorn_NET_Final.Pages.Students
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!StudentExists(Student.StudentId))
+                if (!SubmissionExists(Submission.SubId))
                 {
                     return NotFound();
                 }
@@ -69,9 +73,9 @@ namespace VanHorn_NET_Final.Pages.Students
             return RedirectToPage("./Index");
         }
 
-        private bool StudentExists(int id)
+        private bool SubmissionExists(int id)
         {
-            return _context.Student.Any(e => e.StudentId == id);
+            return _context.Submission.Any(e => e.SubId == id);
         }
     }
 }
