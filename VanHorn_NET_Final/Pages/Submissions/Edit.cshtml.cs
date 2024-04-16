@@ -49,7 +49,7 @@ namespace VanHorn_NET_Final.Pages.Submissions
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int questionCount)
         {
             //if (!ModelState.IsValid)
             //{
@@ -75,8 +75,8 @@ namespace VanHorn_NET_Final.Pages.Submissions
                     throw;
                 }
             }
-            QuestionCount++;
-            return RedirectToPage("/Submissions/Edit", new { id = Submission.SubId, questionCount = QuestionCount});
+            questionCount++;
+            return RedirectToPage("/Submissions/Edit", new { id = Submission.SubId, questionCount});
         }
 
         private bool SubmissionExists(int id)

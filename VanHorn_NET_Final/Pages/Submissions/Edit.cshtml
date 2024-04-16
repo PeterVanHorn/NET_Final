@@ -7,7 +7,7 @@
 
 <dl class="row">
     <h4>
-        @if (Model.Questions.Count > 0)
+        @if (Model.Questions.Count > 0 && Model.Questions.Count > Model.QuestionCount)
         {
             <p>Question Number @Model.Questions[Model.QuestionCount].QuestionId</p>
         }
@@ -19,7 +19,7 @@
     <input type="hidden" asp-for="QuestionCount" />
     <table class="table">
         <tbody>
-            @if (Model.Questions.Count > 0)
+            @if (Model.Questions.Count > 0 && Model.Questions.Count > Model.QuestionCount)
             {
                 <header> @Html.DisplayFor(model => model.Questions[Model.QuestionCount].QuestionText) </header>
                 <ul>
