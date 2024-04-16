@@ -39,7 +39,8 @@ namespace VanHorn_NET_Final.Pages.Submissions
             _context.Submission.Add(Submission);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("/Submissions/Edit", new { subId = Submission.SubId });
+            return RedirectToPage("/Submissions/Edit", new { id = Submission.SubId, questionCount = 0 });
         }
     }
 }
+//https://localhost:7126/Submissions/Edit?subId=7

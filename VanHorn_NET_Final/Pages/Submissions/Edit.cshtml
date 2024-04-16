@@ -9,36 +9,45 @@
     <h4>
         @if (Model.Questions.Count > 0)
         {
-            <p>Question Number @Model.Questions[0].QuestionId</p>
+            <p>Question Number @Model.Questions[Model.QuestionCount].QuestionId</p>
         }
     </h4>
 </dl>
-<table class="table">
-    <tbody>
-        @if (Model.Questions.Count > 0)
-        {
-            <header> @Html.DisplayFor(model => model.Questions[0].QuestionText) </header>
-            <ul>
-                @foreach (var opt in Model.Questions[0].Options)
-                {
-                    <li>
-                        <input id="@opt.OptionId" type="radio" name="options" class="rb" value="@opt.OptionText" />
-                        <label for="" @opt.OptionId>@opt.OptionText </label>
-                    </li>
-                }
-            </ul>
-        }
-    </tbody>
-</table>
+<form method="post">
+    <input type="hidden" asp-for="Submission.SubId" />
+    <input type="hidden" asp-for="Submission.StudentId" />
+    <input type="hidden" asp-for="QuestionCount" />
+    <table class="table">
+        <tbody>
+            @if (Model.Questions.Count > 0)
+            {
+                <header> @Html.DisplayFor(model => model.Questions[Model.QuestionCount].QuestionText) </header>
+                <ul>
+                    @foreach (var opt in Model.Questions[Model.QuestionCount].Options)
+                    {
+                        <li>
+                            <input id="@opt.OptionId" type="radio" name="options" class="rb" value="@opt.OptionText" />
+                            <label for="" @opt.OptionId>@opt.OptionText </label>
+                        </li>
+                    }
+                </ul>
+            }
+        </tbody>
+    </table>
+    @if (Model.Questions.Count > Model.QuestionCount)
+    {
+        <div class="form-group">
+            <input type="submit" value="Next Question" class="btn btn-primary" />
+        </div>
+    }
+    else
+    {
+        <div class="form-group">
+            <input type="submit" value="Complete" class="btn btn-primary" />
+        </div>
+    }
+</form>
 
-@if (Model.Questions.Count > 1)
-{
-    <button id="nextBtn" class="btn btn-primary">Next Question</button>
-}
-
-<div>
-    <a asp-page="./Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

@@ -21,13 +21,16 @@ namespace VanHorn_NET_Final.Pages.Submissions
 
         [BindProperty]
         public Submission Submission { get; set; } = default!;
+        public Option Selected { get; set; }
         public IList<Question> Questions { get; set; }
         public IList<Option> Options { get; set; }
+        public int QuestionCount { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int? id, int questionCount)
         {
             Questions = await _context.Questions.ToListAsync();
             Options = await _context.Options.ToListAsync();
+            QuestionCount = questionCount;
             if (id == null)
             {
                 return NotFound();
@@ -38,8 +41,9 @@ namespace VanHorn_NET_Final.Pages.Submissions
             {
                 return NotFound();
             }
+
             Submission = submission;
-           ViewData["StudentId"] = new SelectList(_context.Student, "StudentId", "StudentId");
+            ViewData["StudentId"] = new SelectList(_context.Student, "StudentId", "StudentId");
             return Page();
         }
 
@@ -51,6 +55,8 @@ namespace VanHorn_NET_Final.Pages.Submissions
             //{
             //    return Page();
             //}
+            
+            //Submission.Answers.Add(Selected);
 
             _context.Attach(Submission).State = EntityState.Modified;
 
@@ -69,8 +75,8 @@ namespace VanHorn_NET_Final.Pages.Submissions
                     throw;
                 }
             }
-
-            return RedirectToPage("./Index");
+            QuestionCount++;
+            return RedirectToPage("/Submissions/Edit", new { id = Submission.SubId, questionCount = QuestionCount});
         }
 
         private bool SubmissionExists(int id)

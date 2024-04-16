@@ -13,6 +13,7 @@ namespace VanHorn_NET_Final.Models
         public DbSet<Quiz> Quizzes { get; set; }
         public DbSet<Student> Student { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Submission> Submissions { get; set; }
 
         public DomainContext(DbContextOptions<DomainContext> options) : base(options)
         {
