@@ -34,6 +34,7 @@ namespace VanHorn_NET_Final.Pages.Submissions
             {
                 return NotFound();
             }
+            Quiz = quiz;
             return Page();
         }
 
