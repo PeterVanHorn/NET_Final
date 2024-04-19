@@ -23,10 +23,12 @@
 @foreach (var item in Model.Submission) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Student.StudentId)
+                @Html.DisplayFor(modelItem => item.Student.lastName)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.SubId">Edit</a> |
+                @Html.DisplayFor(modelItem => item.Quiz.QuizName)
+            </td>
+            <td>
                 <a asp-page="./Details" asp-route-id="@item.SubId">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.SubId">Delete</a>
             </td>

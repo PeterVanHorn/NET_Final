@@ -19,6 +19,7 @@ namespace VanHorn_NET_Final.Pages.Submissions
         }
 
         public Submission Submission { get; set; } = default!;
+        public IList<Option> Options { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

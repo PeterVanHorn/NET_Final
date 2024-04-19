@@ -12,12 +12,28 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Submission.Student)
+            @Html.DisplayNameFor(model => model.Submission.Student.lastName)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Submission.Student.StudentId)
         </dd>
     </dl>
+    <table class="table">
+        <tbody>
+            <tr>
+                @if (Model.Submission.Answers != null)
+                {
+                    <header>Answers</header>
+                    <ul>
+                        @foreach (var item in Model.Submission.Answers)
+                        {
+                            <li>Correct: @item.Correct</li>
+                        }
+                    </ul>
+                }
+            </tr>
+        </tbody>
+    </table>
 </div>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Submission.SubId">Edit</a> |

@@ -18,10 +18,20 @@ namespace VanHorn_NET_Final.Pages.Submissions
         {
             _context = context;
         }
-        public IActionResult OnGet()
+        public Quiz Quiz { get; set; } = default!;
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var quiz = await _context.Quizzes.FirstOrDefaultAsync(m => m.QuizId == id);
             ViewData["StudentId"] = new SelectList(_context.Student, "StudentId", "lastName");
-
+            if (quiz == null)
+            {
+                return NotFound();
+            }
+            Quiz = quiz;
             return Page();
         }
 

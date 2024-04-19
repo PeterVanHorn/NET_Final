@@ -23,13 +23,21 @@
             {
                 <header> @Html.DisplayFor(model => model.Questions[Model.QuestionCount].QuestionText) </header>
                 <ul>
-                    @foreach (var opt in Model.Questions[Model.QuestionCount].Options)
+                    @if (Model.Questions[Model.QuestionCount].Options != null)
                     {
-                        <li>
-                            <input id="@opt.OptionId" type="radio" name="options" class="rb" value="@opt.OptionText" />
-                            <label for="" @opt.OptionId>@opt.OptionText </label>
-                        </li>
+                        @foreach (var opt in Model.Questions[Model.QuestionCount].Options)
+                        {
+                            <li>
+                                <input id="@opt.OptionId" type="radio" name="options" class="rb" value="@opt.OptionText" />
+                                <label for="" @opt.OptionId>@opt.OptionText </label>
+                            </li>
+                        }
                     }
+                    else
+                    {
+                        <p>No options exist for this question</p>
+                    }
+
                 </ul>
             }
         </tbody>

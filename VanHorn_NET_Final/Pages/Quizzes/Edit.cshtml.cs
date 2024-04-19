@@ -31,7 +31,7 @@ namespace VanHorn_NET_Final.Pages.Quizzes
                 return NotFound();
             }
 
-            var quiz =  await _context.Quizzes.FirstOrDefaultAsync(m => m.QuizId == id);
+            var quiz = await _context.Quizzes.FirstOrDefaultAsync(m => m.QuizId == id);
             if (quiz == null)
             {
                 return NotFound();
