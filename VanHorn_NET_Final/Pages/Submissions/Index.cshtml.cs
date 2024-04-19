@@ -23,7 +23,8 @@ namespace VanHorn_NET_Final.Pages.Submissions
         public async Task OnGetAsync()
         {
             Submission = await _context.Submission
-                .Include(s => s.Student).ToListAsync();
+                .Include(s => s.Student)
+                .Include(u => u.Quiz).ToListAsync();
         }
     }
 }

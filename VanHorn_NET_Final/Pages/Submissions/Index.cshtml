@@ -16,6 +16,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Submission[0].Student)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Submission[0].Quiz)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -26,7 +29,7 @@
                 @Html.DisplayFor(modelItem => item.Student.lastName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Quiz.QuizName)
+                @Html.DisplayFor(modelItem => item.Quiz.QuizId)
             </td>
             <td>
                 <a asp-page="./Details" asp-route-id="@item.SubId">Details</a> |

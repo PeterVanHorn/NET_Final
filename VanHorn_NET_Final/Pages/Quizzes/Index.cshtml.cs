@@ -31,4 +31,3 @@ namespace VanHorn_NET_Final.Pages.Quizzes
         }
     }
 }
-//< a asp - page = "./Attempt" asp - route - id = "@item.QuizId" > Attempt </ a >

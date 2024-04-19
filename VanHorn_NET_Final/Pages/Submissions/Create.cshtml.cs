@@ -18,6 +18,8 @@ namespace VanHorn_NET_Final.Pages.Submissions
         {
             _context = context;
         }
+        [BindProperty]
+        public Submission Submission { get; set; } = default!;
         public Quiz Quiz { get; set; } = default!;
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -31,12 +33,9 @@ namespace VanHorn_NET_Final.Pages.Submissions
             {
                 return NotFound();
             }
-            Quiz = quiz;
+            //Submission.Quiz = quiz;
             return Page();
         }
-
-        [BindProperty]
-        public Submission Submission { get; set; } = default!;
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -45,7 +44,6 @@ namespace VanHorn_NET_Final.Pages.Submissions
             //{
             //    return Page();
             //}
-
             _context.Submission.Add(Submission);
             await _context.SaveChangesAsync();
 
@@ -53,4 +51,3 @@ namespace VanHorn_NET_Final.Pages.Submissions
         }
     }
 }
-//https://localhost:7126/Submissions/Edit?subId=7
