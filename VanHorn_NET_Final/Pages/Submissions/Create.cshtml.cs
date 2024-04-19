@@ -27,13 +27,13 @@ namespace VanHorn_NET_Final.Pages.Submissions
             {
                 return NotFound();
             }
+
             var quiz = await _context.Quizzes.FirstOrDefaultAsync(m => m.QuizId == id);
             ViewData["StudentId"] = new SelectList(_context.Student, "StudentId", "lastName");
             if (quiz == null)
             {
                 return NotFound();
             }
-            //Submission.Quiz = quiz;
             return Page();
         }
 
@@ -44,6 +44,7 @@ namespace VanHorn_NET_Final.Pages.Submissions
             //{
             //    return Page();
             //}
+
             _context.Submission.Add(Submission);
             await _context.SaveChangesAsync();
 
