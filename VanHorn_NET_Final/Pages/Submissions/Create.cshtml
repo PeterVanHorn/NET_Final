@@ -10,6 +10,7 @@
         <form method="post">
             <input type="hidden" asp-for="Submission.SubId" />
             <input type="hidden" asp-for="Submission.QuizId" />
+
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Submission.StudentId" class="control-label"></label>
