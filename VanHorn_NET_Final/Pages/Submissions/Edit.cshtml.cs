@@ -53,7 +53,6 @@ namespace VanHorn_NET_Final.Pages.Submissions
             {
                 return NotFound();
             }
-
             Submission = submission;
             return Page();
         }
@@ -104,7 +103,7 @@ namespace VanHorn_NET_Final.Pages.Submissions
             else
             {
                 // If all questions are answered, redirect to a different page
-                return RedirectToPage("/Index");
+                return RedirectToPage("/Index", new {questionCount});
             }
         }
 
