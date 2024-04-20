@@ -41,7 +41,7 @@
                                                     @{
                                                         int? questionId = opt.QuestionId;
                                                     }
-                                                    <a asp-page="/Options/Edit" asp-route-quizId="@questionId" asp-route-id="@opt.OptionId"> Edit Option </a>
+                                                    <a asp-page="/Options/Edit" asp-route-quizId="@Model.Quiz.QuizId" asp-route-questionId="@questionId" asp-route-id="@opt.OptionId"> Edit Option </a>
                                                 </li>
                                             }
                                         </ul>

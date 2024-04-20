@@ -23,8 +23,10 @@ namespace VanHorn_NET_Final.Pages.Options
 
         [BindProperty]
         public Option Option { get; set; } = default!;
+        public int? QId { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+
+        public async Task<IActionResult> OnGetAsync(int? id, int? quizId)
         {
             if (id == null)
             {
@@ -36,6 +38,7 @@ namespace VanHorn_NET_Final.Pages.Options
             {
                 return NotFound();
             }
+            QId = quizId;
             Option = option;
             return Page();
         }
@@ -67,7 +70,7 @@ namespace VanHorn_NET_Final.Pages.Options
                     throw;
                 }
             }
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Quizzes/Index");
         }
         private bool OptionExists(int id)
         {
