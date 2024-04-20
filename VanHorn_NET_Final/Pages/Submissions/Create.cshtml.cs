@@ -43,7 +43,10 @@ namespace VanHorn_NET_Final.Pages.Submissions
             //{
             //    return Page();
             //}
-
+            if (Submission.Answers == null)
+            {
+                Submission.Answers = new List<Answer>();
+            }
             _context.Submissions.Add(Submission);
             await _context.SaveChangesAsync();
 

@@ -14,6 +14,7 @@ namespace VanHorn_NET_Final.Models
         public DbSet<Student> Students { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Submission> Submissions { get; set; }
+        public DbSet<Answer> Answers { get; set; }
 
         public DomainContext(DbContextOptions<DomainContext> options) : base(options)
         {
@@ -70,7 +71,7 @@ namespace VanHorn_NET_Final.Models
             modelBuilder.Entity<Quiz>().HasData(quizzes);
 
             IList<Submission> submissions = new List<Submission>();
-            submissions.Add(new Submission() { SubId = 1, QuizId = 1, Options = [], StudentId = 2 });
+            submissions.Add(new Submission() { SubId = 1, QuizId = 1, Answers = [], StudentId = 2 });
 
             modelBuilder.Entity<Submission>().HasData(submissions);
         }

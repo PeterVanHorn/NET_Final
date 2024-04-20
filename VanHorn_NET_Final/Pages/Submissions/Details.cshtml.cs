@@ -33,7 +33,7 @@ namespace VanHorn_NET_Final.Pages.Submissions
 
             var submission = await _context.Submissions
                 .Include(s => s.Student)
-                .Include(o => o.Options)
+                .Include(o => o.Answers)
                 .FirstOrDefaultAsync(m => m.SubId == id);
             if (submission == null)
             {

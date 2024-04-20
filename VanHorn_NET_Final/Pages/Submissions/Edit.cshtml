@@ -29,7 +29,7 @@
                         @foreach (var opt in Model.Questions[Model.QuestionCount].Options)
                         {
                             <li>
-                                <input id="@opt.OptionId" type="radio" name="options" class="rb" value="@opt.OptionText" />
+                                <input id="@opt.OptionId" type="radio" name="Selected" class="rb" value="@opt.OptionId" />
                                 <label for="" @opt.OptionId>@opt.OptionText </label>
                             </li>
                         }

@@ -27,13 +27,13 @@
     <table class="table">
         <tbody>
             <tr>
-                @if (Model.Submission.Options != null)
+                @if (Model.Submission.Answers != null)
                 {
                     <h4>Answers</h4>
                     <ul>
-                        @foreach (var item in Model.Submission.Options)
+                        @foreach (var item in Model.Submission.Answers)
                         {
-                            <li>@item.OptionText @item.Correct</li>
+                            <li>@item.AnswerText @item.Correct</li>
                         }
                     </ul>
                 }

@@ -21,7 +21,13 @@ namespace VanHorn_NET_Final.Pages.Submissions
 
         [BindProperty]
         public Submission Submission { get; set; } = default!;
+        [BindProperty]
         public Option Selected { get; set; }
+        [BindProperty]
+        public Answer Answer { get; set; }
+        [BindProperty]
+        public IList<Answer> Answers { get; set; }
+        [BindProperty]
         public IList<Question> Questions { get; set; }
         public IList<Option> Options { get; set; }
         public int QuestionCount { get; set; }
@@ -47,6 +53,7 @@ namespace VanHorn_NET_Final.Pages.Submissions
             }
 
             Submission = submission;
+            QuestionCount = questionCount;
             return Page();
         }
 
@@ -58,7 +65,20 @@ namespace VanHorn_NET_Final.Pages.Submissions
             //{
             //    return Page();
             //}
-
+            //List<Answer> answers = new List<Answer>();
+            
+            if (Selected == null || Selected.OptionText == null)
+            {
+                ModelState.AddModelError(string.Empty, "Please select an option.");
+                return Page();
+            }
+            Answer answer = new Answer
+            {
+                AnswerText = Selected.OptionText,
+                Correct = Selected.Correct
+            };
+            Answer = answer;
+            Submission.Answers.Add(answer);
             _context.Attach(Submission).State = EntityState.Modified;
 
             try
@@ -77,14 +97,16 @@ namespace VanHorn_NET_Final.Pages.Submissions
                 }
             }
             questionCount++;
-            //if (questionCount == 1)
-            //{
-            //    return RedirectToPage("/Index");
-            //}
-            //else
-            //{
+
+            if (questionCount < Questions.Count)
+            {
                 return RedirectToPage("/Submissions/Edit", new { id = Submission.SubId, questionCount });
-            //}
+            }
+            else
+            {
+                // If all questions are answered, redirect to a different page
+                return RedirectToPage("/SuccessPage");
+            }
         }
 
         private bool SubmissionExists(int id)
