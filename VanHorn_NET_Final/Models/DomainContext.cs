@@ -68,6 +68,11 @@ namespace VanHorn_NET_Final.Models
             quizzes.Add(new Quiz() { QuizId = 2, QuizName = "WordQuiz", Questions = [], TeacherId = 2 });
 
             modelBuilder.Entity<Quiz>().HasData(quizzes);
+
+            IList<Submission> submissions = new List<Submission>();
+            submissions.Add(new Submission() { SubId = 1, QuizId = 1, Options = [], StudentId = 2 });
+
+            modelBuilder.Entity<Submission>().HasData(submissions);
         }
     }
 }

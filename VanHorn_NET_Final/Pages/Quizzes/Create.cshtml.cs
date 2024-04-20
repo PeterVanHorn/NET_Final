@@ -41,7 +41,6 @@ namespace VanHorn_NET_Final.Pages.Quizzes
             //    return Page();
             //}
 
-            //var quiz = new Quiz { QuizName = Quiz.QuizName };
 
             _context.Quizzes.Add(Quiz);
             await _context.SaveChangesAsync();

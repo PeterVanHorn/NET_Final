@@ -18,7 +18,6 @@
     <input type="hidden" asp-for="Submission.StudentId" />
     <input type="hidden" asp-for="Submission.QuizId" />
     <input type="hidden" asp-for="QuestionCount" />
-    
     <table class="table">
         <tbody>
             @if (Model.Questions.Count > 0 && Model.Questions.Count > Model.QuestionCount && Model.Questions[Model.QuestionCount].QuizId == 1)

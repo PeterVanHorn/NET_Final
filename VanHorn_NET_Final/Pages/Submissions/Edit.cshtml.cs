@@ -25,10 +25,14 @@ namespace VanHorn_NET_Final.Pages.Submissions
         public IList<Question> Questions { get; set; }
         public IList<Option> Options { get; set; }
         public int QuestionCount { get; set; }
+        public Quiz Quiz { get; set; }
+        public Question Question { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id, int questionCount)
         {
-            Questions = await _context.Questions.ToListAsync();
+            var submission = await _context.Submissions
+                .FirstOrDefaultAsync(m => m.SubId == id);
+            Questions = await _context.Questions.Where(q => q.QuizId == submission.QuizId).ToListAsync();
             Options = await _context.Options.ToListAsync();
             QuestionCount = questionCount;
             if (id == null)
@@ -36,14 +40,13 @@ namespace VanHorn_NET_Final.Pages.Submissions
                 return NotFound();
             }
 
-            var submission =  await _context.Submissions.FirstOrDefaultAsync(m => m.SubId == id);
+            
             if (submission == null)
             {
                 return NotFound();
             }
 
             Submission = submission;
-            ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "StudentId");
             return Page();
         }
 
@@ -55,8 +58,6 @@ namespace VanHorn_NET_Final.Pages.Submissions
             //{
             //    return Page();
             //}
-            
-            //Submission.Answers.Add(Selected);
 
             _context.Attach(Submission).State = EntityState.Modified;
 
@@ -76,7 +77,14 @@ namespace VanHorn_NET_Final.Pages.Submissions
                 }
             }
             questionCount++;
-            return RedirectToPage("/Submissions/Edit", new { id = Submission.SubId, questionCount});
+            //if (questionCount == 1)
+            //{
+            //    return RedirectToPage("/Index");
+            //}
+            //else
+            //{
+                return RedirectToPage("/Submissions/Edit", new { id = Submission.SubId, questionCount });
+            //}
         }
 
         private bool SubmissionExists(int id)
