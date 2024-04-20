@@ -21,17 +21,8 @@ namespace VanHorn_NET_Final.Pages.Submissions
         [BindProperty]
         public Submission Submission { get; set; } = new Submission();
         public Quiz Quiz { get; set; }
-        public async Task<IActionResult> OnGetAsync(int? quizId)
+        public async Task<IActionResult> OnGetAsync()
         {
-            //if (quizId == null)
-            //{
-            //    return NotFound();
-            //}
-            //Quiz = await _context.Quizzes.FirstOrDefaultAsync(m => m.QuizId == quizId);
-            //if (Quiz == null)
-            //{
-            //    return NotFound();
-            //}
             ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "lastName");
             ViewData["QuizId"] = new SelectList(_context.Quizzes, "QuizId", "QuizName");
             return Page();
@@ -39,18 +30,15 @@ namespace VanHorn_NET_Final.Pages.Submissions
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    return Page();
-            //}
             if (Submission.Answers == null)
             {
                 Submission.Answers = new List<Answer>();
             }
+
             _context.Submissions.Add(Submission);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("/Submissions/Edit", new { id = Submission.SubId, questionCount = 0 });
+            return RedirectToPage("/Submissions/Edit", new { id = Submission.SubId, quizId = Submission.QuizId, questionCount = 0 });
         }
     }
 }

@@ -17,7 +17,7 @@
     <input type="hidden" asp-for="Submission.SubId" />
     <input type="hidden" asp-for="Submission.StudentId" />
     <input type="hidden" asp-for="Submission.QuizId" />
-    <input type="hidden" asp-for="QuestionCount" />
+    
     <table class="table">
         <tbody>
             @if (Model.Questions.Count > 0 && Model.Questions.Count > Model.QuestionCount && Model.Questions[Model.QuestionCount].QuizId == 1)
@@ -29,7 +29,7 @@
                         @foreach (var opt in Model.Questions[Model.QuestionCount].Options)
                         {
                             <li>
-                                <input id="@opt.OptionId" type="radio" name="Selected" class="rb" value="@opt.OptionId" />
+                                <input id="@opt.OptionId" type="radio" name="SelectedOptionId" class="rb" value="@opt.OptionId" />
                                 <label for="" @opt.OptionId>@opt.OptionText </label>
                             </li>
                         }
@@ -38,23 +38,13 @@
                     {
                         <p>No options exist for this question</p>
                     }
-
                 </ul>
             }
         </tbody>
     </table>
-    @if (Model.Questions.Count > Model.QuestionCount)
-    {
         <div class="form-group">
-            <input type="submit" value="Next Question" class="btn btn-primary" />
+            <input type="submit" value="Submit" class="btn btn-primary" />
         </div>
-    }
-    else
-    {
-        <div class="form-group">
-            <input type="submit" value="Complete" class="btn btn-primary" />
-        </div>
-    }
 </form>
 
 

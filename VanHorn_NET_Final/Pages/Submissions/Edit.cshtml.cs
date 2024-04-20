@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json.Linq;
 using VanHorn_NET_Final.Models;
 
 namespace VanHorn_NET_Final.Pages.Submissions
@@ -22,7 +23,7 @@ namespace VanHorn_NET_Final.Pages.Submissions
         [BindProperty]
         public Submission Submission { get; set; } = default!;
         [BindProperty]
-        public Option Selected { get; set; }
+        public int SelectedOptionId { get; set; }
         [BindProperty]
         public Answer Answer { get; set; }
         [BindProperty]
@@ -34,11 +35,12 @@ namespace VanHorn_NET_Final.Pages.Submissions
         public Quiz Quiz { get; set; }
         public Question Question { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id, int questionCount)
+        public async Task<IActionResult> OnGetAsync(int? id, int? quizId, int questionCount)
         {
             var submission = await _context.Submissions
                 .FirstOrDefaultAsync(m => m.SubId == id);
-            Questions = await _context.Questions.Where(q => q.QuizId == submission.QuizId).ToListAsync();
+            Questions = await _context.Questions
+                .Where(q => q.QuizId == quizId).ToListAsync();
             Options = await _context.Options.ToListAsync();
             QuestionCount = questionCount;
             if (id == null)
@@ -53,7 +55,6 @@ namespace VanHorn_NET_Final.Pages.Submissions
             }
 
             Submission = submission;
-            QuestionCount = questionCount;
             return Page();
         }
 
@@ -61,23 +62,23 @@ namespace VanHorn_NET_Final.Pages.Submissions
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync(int questionCount)
         {
-            //if (!ModelState.IsValid)
+            //if (SelectedOptionId == 0)
             //{
+            //    ModelState.AddModelError(string.Empty, "Please select an option.");
             //    return Page();
             //}
-            //List<Answer> answers = new List<Answer>();
-            
-            if (Selected == null || Selected.OptionText == null)
+            questionCount++;
+            if (Submission.Answers == null)
             {
-                ModelState.AddModelError(string.Empty, "Please select an option.");
-                return Page();
+                Submission.Answers = new List<Answer>();
             }
+            var selectedOption = await _context.Options.FindAsync(SelectedOptionId);
             Answer answer = new Answer
             {
-                AnswerText = Selected.OptionText,
-                Correct = Selected.Correct
+                AnswerText = selectedOption.OptionText,
+                Correct = selectedOption.Correct
             };
-            Answer = answer;
+            //Answer = answer;
             Submission.Answers.Add(answer);
             _context.Attach(Submission).State = EntityState.Modified;
 
@@ -96,16 +97,14 @@ namespace VanHorn_NET_Final.Pages.Submissions
                     throw;
                 }
             }
-            questionCount++;
-
             if (questionCount < Questions.Count)
             {
-                return RedirectToPage("/Submissions/Edit", new { id = Submission.SubId, questionCount });
+                return RedirectToPage("/Submissions/Edit", new { id = Submission.SubId, quizId = Submission.QuizId, questionCount });
             }
             else
             {
                 // If all questions are answered, redirect to a different page
-                return RedirectToPage("/SuccessPage");
+                return RedirectToPage("/Index");
             }
         }
 
