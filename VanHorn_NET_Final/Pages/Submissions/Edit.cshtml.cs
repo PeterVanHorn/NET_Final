@@ -53,6 +53,7 @@ namespace VanHorn_NET_Final.Pages.Submissions
             {
                 return NotFound();
             }
+            
             Submission = submission;
             return Page();
         }
@@ -66,7 +67,8 @@ namespace VanHorn_NET_Final.Pages.Submissions
             //    ModelState.AddModelError(string.Empty, "Please select an option.");
             //    return Page();
             //}
-            questionCount++;
+            //questionCount++;
+            QuestionCount++;
             if (Submission.Answers == null)
             {
                 Submission.Answers = new List<Answer>();
@@ -96,15 +98,16 @@ namespace VanHorn_NET_Final.Pages.Submissions
                     throw;
                 }
             }
-            if (questionCount < Questions.Count)
-            {
-                return RedirectToPage("/Submissions/Edit", new { id = Submission.SubId, quizId = Submission.QuizId, questionCount });
-            }
-            else
-            {
-                // If all questions are answered, redirect to a different page
-                return RedirectToPage("/Index", new {questionCount});
-            }
+            
+            //if (QuestionCount < Questions.Count)
+            //{
+                return RedirectToPage("/Submissions/Edit", new { id = Submission.SubId, quizId = Submission.QuizId, QuestionCount });
+            //}
+            //else
+            //{
+            //    // If all questions are answered, redirect to a different page
+            //    return RedirectToPage("/Index", new {QuestionCount});
+            //}
         }
 
         private bool SubmissionExists(int id)
