@@ -19,7 +19,7 @@
     <input type="hidden" asp-for="QuestionCount" />
     <table class="table">
         <tbody>
-            @if (Model.Questions.Count > 0 && Model.Questions.Count > Model.QuestionCount)
+            @if (Model.Questions.Count > 0 && Model.Questions.Count > Model.QuestionCount && Model.Questions[Model.QuestionCount].QuizId == 1)
             {
                 <header> @Html.DisplayFor(model => model.Questions[Model.QuestionCount].QuestionText) </header>
                 <ul>

@@ -19,25 +19,23 @@ namespace VanHorn_NET_Final.Pages.Submissions
             _context = context;
         }
         [BindProperty]
-        public Submission Submission { get; set; } = default!;
-        public Quiz Quiz { get; set; } = default!;
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public Submission Submission { get; set; } = new Submission();
+        public Quiz Quiz { get; set; }
+        public async Task<IActionResult> OnGetAsync(int? quizId)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var quiz = await _context.Quizzes.FirstOrDefaultAsync(m => m.QuizId == id);
-            ViewData["StudentId"] = new SelectList(_context.Student, "StudentId", "lastName");
-            if (quiz == null)
-            {
-                return NotFound();
-            }
-            Quiz = quiz;
+            //if (quizId == null)
+            //{
+            //    return NotFound();
+            //}
+            //Quiz = await _context.Quizzes.FirstOrDefaultAsync(m => m.QuizId == quizId);
+            //if (Quiz == null)
+            //{
+            //    return NotFound();
+            //}
+            ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "lastName");
+            ViewData["QuizId"] = new SelectList(_context.Quizzes, "QuizId", "QuizName");
             return Page();
         }
-
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
@@ -46,10 +44,10 @@ namespace VanHorn_NET_Final.Pages.Submissions
             //    return Page();
             //}
 
-            _context.Submission.Add(Submission);
+            _context.Submissions.Add(Submission);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("/Submissions/Edit", new { id = Submission.SubId, questionCount = 0 });
+            return RedirectToPage("/Submissions/Edit", new { id = Submission.SubId, questionCount = 0, qid = Submission.QuizId });
         }
     }
 }

@@ -8,13 +8,19 @@
 <div class="row">
     <div class="col-md-4">
         <form method="post">
-            <input type="hidden" asp-for="Submission.SubId" />
-            <input type="hidden" asp-for="Submission.QuizId" />
+            <div class="form-group">
+                <input type="hidden" asp-for="Submission.SubId" />
+                <input type="hidden" asp-for="Quiz.QuizId" />
 
+            </div>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Submission.StudentId" class="control-label"></label>
                 <select asp-for="Submission.StudentId" class="form-control" asp-items="ViewBag.StudentId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Submission.QuizId" class="control-label"></label>
+                <select asp-for="Submission.QuizId" class="form-control" asp-items="ViewBag.QuizId"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Begin" class="btn btn-primary" />

@@ -27,7 +27,7 @@ namespace VanHorn_NET_Final.Pages.Students
                 return NotFound();
             }
 
-            var student = await _context.Student.FirstOrDefaultAsync(m => m.StudentId == id);
+            var student = await _context.Students.FirstOrDefaultAsync(m => m.StudentId == id);
             if (student == null)
             {
                 return NotFound();

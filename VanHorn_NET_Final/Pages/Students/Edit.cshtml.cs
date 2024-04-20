@@ -29,7 +29,7 @@ namespace VanHorn_NET_Final.Pages.Students
                 return NotFound();
             }
 
-            var student =  await _context.Student.FirstOrDefaultAsync(m => m.StudentId == id);
+            var student =  await _context.Students.FirstOrDefaultAsync(m => m.StudentId == id);
             if (student == null)
             {
                 return NotFound();
@@ -71,7 +71,7 @@ namespace VanHorn_NET_Final.Pages.Students
 
         private bool StudentExists(int id)
         {
-            return _context.Student.Any(e => e.StudentId == id);
+            return _context.Students.Any(e => e.StudentId == id);
         }
     }
 }

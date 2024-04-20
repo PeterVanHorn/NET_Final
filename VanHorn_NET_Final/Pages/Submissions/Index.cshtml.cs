@@ -18,11 +18,12 @@ namespace VanHorn_NET_Final.Pages.Submissions
             _context = context;
         }
 
-        public IList<Submission> Submission { get;set; } = default!;
+        public IList<Submission> Submissions { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            Submission = await _context.Submission
+            _context.Database.EnsureCreated();
+            Submissions = await _context.Submissions
                 .Include(s => s.Student)
                 .Include(u => u.Quiz).ToListAsync();
         }

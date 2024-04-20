@@ -36,14 +36,14 @@ namespace VanHorn_NET_Final.Pages.Submissions
                 return NotFound();
             }
 
-            var submission =  await _context.Submission.FirstOrDefaultAsync(m => m.SubId == id);
+            var submission =  await _context.Submissions.FirstOrDefaultAsync(m => m.SubId == id);
             if (submission == null)
             {
                 return NotFound();
             }
 
             Submission = submission;
-            ViewData["StudentId"] = new SelectList(_context.Student, "StudentId", "StudentId");
+            ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "StudentId");
             return Page();
         }
 
@@ -81,7 +81,7 @@ namespace VanHorn_NET_Final.Pages.Submissions
 
         private bool SubmissionExists(int id)
         {
-            return _context.Submission.Any(e => e.SubId == id);
+            return _context.Submissions.Any(e => e.SubId == id);
         }
     }
 }

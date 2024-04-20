@@ -29,7 +29,7 @@ namespace VanHorn_NET_Final.Pages.Submissions
                 return NotFound();
             }
 
-            var submission = await _context.Submission.FirstOrDefaultAsync(m => m.SubId == id);
+            var submission = await _context.Submissions.FirstOrDefaultAsync(m => m.SubId == id);
             if (submission == null)
             {
                 return NotFound();

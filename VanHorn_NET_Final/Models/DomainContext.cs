@@ -11,7 +11,7 @@ namespace VanHorn_NET_Final.Models
         public DbSet<Option> Options { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<Quiz> Quizzes { get; set; }
-        public DbSet<Student> Student { get; set; }
+        public DbSet<Student> Students { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Submission> Submissions { get; set; }
 
@@ -69,7 +69,6 @@ namespace VanHorn_NET_Final.Models
 
             modelBuilder.Entity<Quiz>().HasData(quizzes);
         }
-        public DbSet<VanHorn_NET_Final.Models.Submission> Submission { get; set; } = default!;
     }
 }
 
