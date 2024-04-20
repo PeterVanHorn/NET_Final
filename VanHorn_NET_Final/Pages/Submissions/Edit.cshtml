@@ -18,7 +18,7 @@
     <input type="hidden" asp-for="Submission.StudentId" />
     <input type="hidden" asp-for="Submission.QuizId" />
     <input type="hidden" asp-for="QuestionCount" />
-    <p>Number of Questions: @Model.Questions.Count</p>
+
     <table class="table">
         <tbody>
             @if (Model.Questions.Count > 0 && Model.Questions.Count > Model.QuestionCount && Model.Questions[Model.QuestionCount].QuizId == 1)
@@ -40,14 +40,19 @@
                         <p>No options exist for this question</p>
                     }
                 </ul>
+                    <div class="form-group">
+                        <input type="submit" value="Submit" class="btn btn-primary" />
+                    </div>
+            }
+            else
+            {
+                <div class="form-group">
+                    <a href="/Index" class="btn btn-primary">Complete Quiz</a>
+                </div>
             }
         </tbody>
     </table>
-        <div class="form-group">
-            <input type="submit" value="Submit" class="btn btn-primary" />
-        </div>
 </form>
-
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

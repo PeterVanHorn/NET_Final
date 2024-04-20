@@ -31,6 +31,7 @@ namespace VanHorn_NET_Final.Pages.Submissions
         [BindProperty]
         public IList<Question> Questions { get; set; }
         public IList<Option> Options { get; set; }
+        [BindProperty]
         public int QuestionCount { get; set; }
         public Quiz Quiz { get; set; }
         public Question Question { get; set; }
@@ -60,14 +61,13 @@ namespace VanHorn_NET_Final.Pages.Submissions
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync(int questionCount)
+        public async Task<IActionResult> OnPostAsync()
         {
             //if (SelectedOptionId == 0)
             //{
             //    ModelState.AddModelError(string.Empty, "Please select an option.");
             //    return Page();
             //}
-            //questionCount++;
             QuestionCount++;
             if (Submission.Answers == null)
             {
@@ -79,7 +79,6 @@ namespace VanHorn_NET_Final.Pages.Submissions
                 AnswerText = selectedOption.OptionText,
                 Correct = selectedOption.Correct
             };
-            //Answer = answer;
             Submission.Answers.Add(answer);
             _context.Attach(Submission).State = EntityState.Modified;
 
@@ -98,16 +97,7 @@ namespace VanHorn_NET_Final.Pages.Submissions
                     throw;
                 }
             }
-            
-            //if (QuestionCount < Questions.Count)
-            //{
-                return RedirectToPage("/Submissions/Edit", new { id = Submission.SubId, quizId = Submission.QuizId, QuestionCount });
-            //}
-            //else
-            //{
-            //    // If all questions are answered, redirect to a different page
-            //    return RedirectToPage("/Index", new {QuestionCount});
-            //}
+            return RedirectToPage("/Submissions/Edit", new { id = Submission.SubId, quizId = Submission.QuizId, QuestionCount });
         }
 
         private bool SubmissionExists(int id)

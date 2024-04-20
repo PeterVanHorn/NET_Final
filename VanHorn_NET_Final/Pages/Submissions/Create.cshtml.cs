@@ -23,6 +23,7 @@ namespace VanHorn_NET_Final.Pages.Submissions
         public Quiz Quiz { get; set; }
         public async Task<IActionResult> OnGetAsync()
         {
+            _context.Database.EnsureCreated();
             ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "lastName");
             ViewData["QuizId"] = new SelectList(_context.Quizzes, "QuizId", "QuizName");
             return Page();

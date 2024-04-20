@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace VanHorn_NET_Final.Pages
 {
-    [Authorize(Policy = "MustBeTeacherType")]
+    [Authorize(Policy = "TeacherOnly")]
     public class TeacherModel : PageModel
     {
         public void OnGet()

@@ -21,8 +21,6 @@ namespace VanHorn_NET_Final.Pages.Submissions
         }
 
         public Submission Submission { get; set; } = default!;
-        //public IList<Option> Options { get; set; } = default!;
-        //public Quiz Quiz { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

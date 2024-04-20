@@ -23,19 +23,28 @@ namespace VanHorn_NET_Final.Models
         {
             modelBuilder.Entity<Quiz>()
                 .HasMany(e => e.Questions)
-                .WithOne(q => q.Quiz);
+                .WithOne(q => q.Quiz)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Question>()
                 .HasMany(e => e.Options)
-                .WithOne(o => o.Question);
+                .WithOne(o => o.Question)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Teacher>()
                 .HasMany(q => q.Quizzes)
-                .WithOne(t => t.Teacher);
+                .WithOne(t => t.Teacher)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Student>()
                 .HasMany(a => a.Submissions)
-                .WithOne(s => s.Student);
+                .WithOne(s => s.Student)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Submission>()
+                .HasMany(s => s.Answers)
+                .WithOne(b => b.Submission)
+                .OnDelete(DeleteBehavior.Cascade);
 
             IList<Teacher> teachers = new List<Teacher>();
             teachers.Add(new Teacher() { TeacherId = 1, FirstName = "Steve", LastName = "French", Quizzes = [], Students = [] });
@@ -54,13 +63,17 @@ namespace VanHorn_NET_Final.Models
             options.Add(new Option() { OptionId = 2, OptionText = "3", Correct = false, QuestionId = 1 });
             options.Add(new Option() { OptionId = 3, OptionText = "4", Correct = false, QuestionId = 1 });
             options.Add(new Option() { OptionId = 4, OptionText = "5", Correct = false, QuestionId = 1 });
+            options.Add(new Option() { OptionId = 5, OptionText = "4", Correct = true, QuestionId = 2 });
+            options.Add(new Option() { OptionId = 6, OptionText = "5", Correct = false, QuestionId = 2 });
+            options.Add(new Option() { OptionId = 7, OptionText = "Matthew", Correct = false, QuestionId = 3 });
+            options.Add(new Option() { OptionId = 8, OptionText = "Steven", Correct = true, QuestionId = 3 });
 
             modelBuilder.Entity<Option>().HasData(options);
 
             IList<Question> questions = new List<Question>();
             questions.Add(new Question() { QuestionId = 1, QuestionText = "1 + 1 =", Options = [], QuizId = 1 });
             questions.Add(new Question() { QuestionId = 2, QuestionText = "2 + 2 = ", Options = [], QuizId = 1 });
-            questions.Add(new Question() { QuestionId = 3, QuestionText = "Pick a word: ", Options = [], QuizId = 2 });
+            questions.Add(new Question() { QuestionId = 3, QuestionText = "Whats the correct word?: ", Options = [], QuizId = 2 });
 
             modelBuilder.Entity<Question>().HasData(questions);
 
