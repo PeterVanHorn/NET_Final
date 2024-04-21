@@ -48,7 +48,7 @@ namespace VanHorn_NET_Final.Pages.Questions
             _context.Questions.Add(question);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("/Options/Create", new { questionId = question.QuestionId});
+            return RedirectToPage("/Options/Create", new { questionId = question.QuestionId, quizId});
         }
     }
 }

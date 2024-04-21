@@ -27,8 +27,10 @@ namespace VanHorn_NET_Final.Pages.Options
         [BindProperty]
         public int QuestionId { get; set; }
         public Question Question { get; set; }
-        public IActionResult OnGet()
+        public int? QId { get; set; }
+        public IActionResult OnGet(int? quizId)
         {
+            QId = quizId;
             return Page();
         }
         public async Task<IActionResult> OnPostAsync(int questionId)

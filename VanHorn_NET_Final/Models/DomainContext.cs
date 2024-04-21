@@ -53,8 +53,8 @@ namespace VanHorn_NET_Final.Models
             modelBuilder.Entity<Teacher>().HasData(teachers);
 
             IList<Student> students = new List<Student>();
-            students.Add(new Student() { StudentId = 1, firstName = "Bob", lastName = "Dole", Submissions = [], TeacherId = 1 });
-            students.Add(new Student() { StudentId = 2, firstName = "Geoffry", lastName = "Dahmer", Submissions = [], TeacherId = 1 });
+            students.Add(new Student() { StudentId = 1, FirstName = "Bob", LastName = "Dole", Submissions = [], TeacherId = 1 });
+            students.Add(new Student() { StudentId = 2, FirstName = "Geoffry", LastName = "Dahmer", Submissions = [], TeacherId = 1 });
 
             modelBuilder.Entity<Student>().HasData(students);
 
