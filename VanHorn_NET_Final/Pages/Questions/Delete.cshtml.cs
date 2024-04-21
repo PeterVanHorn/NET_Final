@@ -22,7 +22,6 @@ namespace VanHorn_NET_Final.Pages.Questions
 
         [BindProperty]
         public Question Question { get; set; } = default!;
-
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -43,13 +42,12 @@ namespace VanHorn_NET_Final.Pages.Questions
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        public async Task<IActionResult> OnPostAsync(int? id, int? quizId)
         {
             if (id == null)
             {
                 return NotFound();
             }
-
             var question = await _context.Questions.FindAsync(id);
             if (question != null)
             {
@@ -58,7 +56,7 @@ namespace VanHorn_NET_Final.Pages.Questions
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Quizzes/Details", new { id = quizId });
         }
     }
 }

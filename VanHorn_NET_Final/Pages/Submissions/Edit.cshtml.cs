@@ -25,16 +25,10 @@ namespace VanHorn_NET_Final.Pages.Submissions
         [BindProperty]
         public int SelectedOptionId { get; set; }
         [BindProperty]
-        public Answer Answer { get; set; }
-        [BindProperty]
-        public IList<Answer> Answers { get; set; }
-        [BindProperty]
         public IList<Question> Questions { get; set; }
         public IList<Option> Options { get; set; }
         [BindProperty]
         public int QuestionCount { get; set; }
-        public Quiz Quiz { get; set; }
-        public Question Question { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id, int? quizId, int questionCount)
         {
@@ -49,7 +43,6 @@ namespace VanHorn_NET_Final.Pages.Submissions
                 return NotFound();
             }
 
-            
             if (submission == null)
             {
                 return NotFound();
@@ -59,8 +52,6 @@ namespace VanHorn_NET_Final.Pages.Submissions
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
             if (SelectedOptionId == 0)
@@ -106,4 +97,3 @@ namespace VanHorn_NET_Final.Pages.Submissions
         }
     }
 }
-//&& Model.Questions[Model.QuestionCount].QuizId == 1

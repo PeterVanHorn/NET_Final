@@ -22,14 +22,14 @@ namespace VanHorn_NET_Final.Pages.Options
 
         [BindProperty]
         public Option Option { get; set; } = default!;
-
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public int? QuizId { get; set; }
+        public async Task<IActionResult> OnGetAsync(int? id, int? quizId)
         {
             if (id == null)
             {
                 return NotFound();
             }
-
+            QuizId = quizId;
             var option = await _context.Options.FirstOrDefaultAsync(m => m.OptionId == id);
 
             if (option == null)
@@ -43,13 +43,12 @@ namespace VanHorn_NET_Final.Pages.Options
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        public async Task<IActionResult> OnPostAsync(int? id, int? quizId)
         {
             if (id == null)
             {
                 return NotFound();
             }
-
             var option = await _context.Options.FindAsync(id);
             if (option != null)
             {
@@ -58,7 +57,7 @@ namespace VanHorn_NET_Final.Pages.Options
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Quizzes/Details", new { id = quizId });
         }
     }
 }

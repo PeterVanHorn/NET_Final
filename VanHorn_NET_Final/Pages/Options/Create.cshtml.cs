@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using VanHorn_NET_Final.Models;
 
 namespace VanHorn_NET_Final.Pages.Options
@@ -20,25 +21,20 @@ namespace VanHorn_NET_Final.Pages.Options
             _context = context;
         }
 
-        public IActionResult OnGet()
-        {
-            return Page();
-        }
-
         [BindProperty]
         public Option Option { get; set; } = default!;
 
         [BindProperty]
         public int QuestionId { get; set; }
-
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
+        public Question Question { get; set; }
+        public IActionResult OnGet()
+        {
+            return Page();
+        }
         public async Task<IActionResult> OnPostAsync(int questionId)
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    return Page();
-            //}
-
+            Question = await _context.Questions
+                .FirstOrDefaultAsync(u => u.QuestionId == questionId);
             Option option = new Option
             {
                 QuestionId = questionId,
@@ -49,7 +45,7 @@ namespace VanHorn_NET_Final.Pages.Options
             _context.Options.Add(option);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("/Quizzes/Index");
+            return RedirectToPage("/Quizzes/Details", new  { id = Question.QuizId });
         }
     }
 }

@@ -31,6 +31,8 @@
                             <ul>
                                 <li>
                                     Question @questionNum: @item.QuestionText
+                                    <a asp-page="/Questions/Edit" asp-route-quizId="@item.QuizId" asp-route-id="@item.QuestionId">Edit</a>
+                                    <a asp-page="/Questions/Delete" asp-route-id="@item.QuestionId" asp-route-quizId="@item.QuizId">Delete</a>
                                     @if (item.Options != null)
                                     {
                                         <header>Options</header>
@@ -41,7 +43,8 @@
                                                     @{
                                                         int? questionId = opt.QuestionId;
                                                     }
-                                                    <a asp-page="/Options/Edit" asp-route-quizId="@Model.Quiz.QuizId" asp-route-questionId="@questionId" asp-route-id="@opt.OptionId"> Edit Option </a>
+                                                    <a asp-page="/Options/Edit" asp-route-quizId="@Model.Quiz.QuizId" asp-route-questionId="@questionId" asp-route-id="@opt.OptionId"> Edit </a>
+                                                    <a asp-page="/Options/Delete" asp-route-id="@opt.OptionId" asp-route-quizId="@Model.Quiz.QuizId">Delete</a>
                                                 </li>
                                             }
                                         </ul>
@@ -53,7 +56,8 @@
                                     @{
                                         int quizId = Model.Quiz.QuizId;
                                     }
-                                    <a asp-page="/Questions/Edit" asp-route-quizId="@quizId" asp-route-id="@item.QuestionId">Edit Question</a>
+                                    
+                                    <a asp-page="/Options/Create" asp-route-quizId="@Model.Quiz.QuizId" asp-route-questionId="@item.QuestionId">Create Option</a>
                                 </li>
                                 @{
                                     questionNum++;
@@ -67,7 +71,7 @@
                     }
                 </td>
             </tr>
-            
+            <a asp-page="/Questions/Create" asp-route-quizId="@Model.Quiz.QuizId">Create Question</a>
         </tbody>
     </table>
 </div>
