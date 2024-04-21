@@ -18,10 +18,11 @@
     <input type="hidden" asp-for="Submission.StudentId" />
     <input type="hidden" asp-for="Submission.QuizId" />
     <input type="hidden" asp-for="QuestionCount" />
-
+    Question Count = @Model.QuestionCount
+    Questions = @Model.Questions.Count
     <table class="table">
         <tbody>
-            @if (Model.Questions.Count > 0 && Model.Questions.Count > Model.QuestionCount && Model.Questions[Model.QuestionCount].QuizId == 1)
+            @if (Model.Questions.Count > 0 && Model.Questions.Count > Model.QuestionCount )
             {
                 <header> @Html.DisplayFor(model => model.Questions[Model.QuestionCount].QuestionText) </header>
                 <ul>

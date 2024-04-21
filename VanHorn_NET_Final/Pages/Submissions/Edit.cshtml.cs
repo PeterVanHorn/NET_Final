@@ -63,11 +63,11 @@ namespace VanHorn_NET_Final.Pages.Submissions
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            //if (SelectedOptionId == 0)
-            //{
-            //    ModelState.AddModelError(string.Empty, "Please select an option.");
-            //    return Page();
-            //}
+            if (SelectedOptionId == 0)
+            {
+                ModelState.AddModelError(string.Empty, "Please select an option.");
+                return Page();
+            }
             QuestionCount++;
             if (Submission.Answers == null)
             {
@@ -106,3 +106,4 @@ namespace VanHorn_NET_Final.Pages.Submissions
         }
     }
 }
+//&& Model.Questions[Model.QuestionCount].QuizId == 1
