@@ -21,10 +21,10 @@ namespace VanHorn_NET_Final.Pages.Submissions
         [BindProperty]
         public Submission Submission { get; set; } = new Submission();
         public Quiz Quiz { get; set; }
-        public async Task<IActionResult> OnGetAsync()
+        public IActionResult OnGet()
         {
             _context.Database.EnsureCreated();
-            ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "lastName");
+            ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "LastName");
             ViewData["QuizId"] = new SelectList(_context.Quizzes, "QuizId", "QuizName");
             return Page();
         }

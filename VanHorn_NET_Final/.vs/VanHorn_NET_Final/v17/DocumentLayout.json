@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|c:\\githubrepos\\net_final\\vanhorn_net_final\\pages\\questions\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|solutionrelative:pages\\questions\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|c:\\githubrepos\\net_final\\vanhorn_net_final\\pages\\submissions\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|solutionrelative:pages\\submissions\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|c:\\githubrepos\\net_final\\vanhorn_net_final\\pages\\questions\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|solutionrelative:pages\\questions\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|c:\\githubrepos\\net_final\\vanhorn_net_final\\pages\\submissions\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|solutionrelative:pages\\submissions\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|c:\\githubrepos\\net_final\\vanhorn_net_final\\pages\\quizzes\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|solutionrelative:pages\\quizzes\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|c:\\githubrepos\\net_final\\vanhorn_net_final\\pages\\quizzes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|solutionrelative:pages\\quizzes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{54577C13-C6F4-4FDF-BC53-F867E757AB6C}|VanHorn_NET_Final.csproj|c:\\githubrepos\\net_final\\vanhorn_net_final\\models\\domaincontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,45 +30,77 @@
       "DocumentGroups": [
         {
           "DockedWidth": 209,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Create.cshtml.cs",
-              "DocumentMoniker": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Questions\\Create.cshtml.cs",
-              "RelativeDocumentMoniker": "Pages\\Questions\\Create.cshtml.cs",
-              "ToolTip": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Questions\\Create.cshtml.cs",
-              "RelativeToolTip": "Pages\\Questions\\Create.cshtml.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAA0AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T15:15:04.751Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Questions\\Create.cshtml",
-              "RelativeDocumentMoniker": "Pages\\Questions\\Create.cshtml",
-              "ToolTip": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Questions\\Create.cshtml",
-              "RelativeToolTip": "Pages\\Questions\\Create.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentMoniker": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Submissions\\Create.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Submissions\\Create.cshtml",
+              "ToolTip": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Submissions\\Create.cshtml",
+              "RelativeToolTip": "Pages\\Submissions\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-21T15:14:53.308Z",
+              "WhenOpened": "2024-04-28T02:06:54.542Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "Create.cshtml.cs",
+              "DocumentMoniker": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Submissions\\Create.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Submissions\\Create.cshtml.cs",
+              "ToolTip": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Submissions\\Create.cshtml.cs",
+              "RelativeToolTip": "Pages\\Submissions\\Create.cshtml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAABfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T02:08:15.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "DomainContext.cs",
               "DocumentMoniker": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Models\\DomainContext.cs",
               "RelativeDocumentMoniker": "Models\\DomainContext.cs",
               "ToolTip": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Models\\DomainContext.cs",
               "RelativeToolTip": "Models\\DomainContext.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAYwCMAAAAoAAAA",
+              "ViewState": "AQIAACUAAAAAAAAAAAAYwDQAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-21T15:03:25.145Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 209,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Create.cshtml.cs",
+              "DocumentMoniker": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Quizzes\\Create.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Quizzes\\Create.cshtml.cs",
+              "ToolTip": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Quizzes\\Create.cshtml.cs",
+              "RelativeToolTip": "Pages\\Quizzes\\Create.cshtml.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-28T02:10:05.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Quizzes\\Create.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Quizzes\\Create.cshtml",
+              "ToolTip": "C:\\GitHubRepos\\NET_Final\\VanHorn_NET_Final\\Pages\\Quizzes\\Create.cshtml",
+              "RelativeToolTip": "Pages\\Quizzes\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-28T02:10:22.463Z",
               "EditorCaption": ""
             }
           ]
