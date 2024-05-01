@@ -28,7 +28,6 @@ namespace VanHorn_NET_Final.Pages.Submissions
             ViewData["QuizId"] = new SelectList(_context.Quizzes, "QuizId", "QuizName");
             return Page();
         }
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
             if (Submission.Answers == null)

@@ -32,13 +32,8 @@ namespace VanHorn_NET_Final.Pages.Questions
         [BindProperty]
         public int QuizId { get; set; }
 
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync(int quizId)
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    return Page();
-            //}
             Question question = new Question
             {
                 QuizId = quizId,

@@ -27,14 +27,8 @@ namespace VanHorn_NET_Final.Pages.Students
         [BindProperty]
         public Student Student { get; set; } = default!;
 
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
             _context.Students.Add(Student);
             await _context.SaveChangesAsync();
 
