@@ -8,7 +8,6 @@ builder.Services.AddRazorPages();
 builder.Services.AddDbContext<DomainContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MyConnection")));
 
-
 // added this in startup file initially but this seems to work
 builder.Services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", options =>
 {
