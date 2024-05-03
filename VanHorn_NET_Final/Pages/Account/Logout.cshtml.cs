@@ -1,6 +1,7 @@
 //Peter Van Horn
 //.NET Final Project
 //05/03/2024
+//change the view to offer logout button while the user is logged in
 
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;

@@ -1,6 +1,10 @@
 ﻿//Peter Van Horn
 //.NET Final Project
 //05/03/2024
+//this is disguised as something else to the user.
+//it is the process of taking the quiz during which the student(or teacher) 
+//creates a submission
+
 
 using System;
 using System.Collections.Generic;

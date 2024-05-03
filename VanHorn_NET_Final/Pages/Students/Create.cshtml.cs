@@ -1,6 +1,7 @@
 ﻿//Peter Van Horn
 //.NET Final Project
 //05/03/2024
+//application is not set up to allow interaction with the student Crud, probably shouldn't have even included it.
 
 using System;
 using System.Collections.Generic;

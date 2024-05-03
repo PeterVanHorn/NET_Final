@@ -1,6 +1,8 @@
 ﻿//Peter Van Horn
 //.NET Final Project
 //05/03/2024
+//creating a quiz starts the path of creating the first question and its options.
+//the path leads back to the quiz details where teacher can add more questions and options.
 
 using System;
 using System.Collections.Generic;

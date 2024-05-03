@@ -1,6 +1,8 @@
 ﻿//Peter Van Horn
 //.NET Final Project
 //05/03/2024
+//Submissions are the objects created over the course of a student taking a quiz.
+//submissions have a list of answers and a student.
 
 using System.ComponentModel.DataAnnotations;
 

@@ -1,6 +1,7 @@
 ﻿//Peter Van Horn
 //.NET Final Project
 //05/03/2024
+//Options represent the possible options for questions, created by the teacher.
 
 namespace VanHorn_NET_Final.Models
 {

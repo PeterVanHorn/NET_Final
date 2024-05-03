@@ -1,6 +1,7 @@
 ﻿//Peter Van Horn
 //.NET Final Project
 //05/03/2024
+//Unmodified from basic scaffolding. just includes more details on the html.
 
 using System;
 using System.Collections.Generic;

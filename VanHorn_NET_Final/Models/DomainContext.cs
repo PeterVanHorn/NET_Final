@@ -1,6 +1,7 @@
 ﻿//Peter Van Horn
 //.NET Final Project
 //05/03/2024
+//context class to create the initial data and database.
 
 using System.Collections.Generic;
 using System.Net.Sockets;

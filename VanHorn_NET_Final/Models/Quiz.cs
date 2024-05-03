@@ -1,6 +1,7 @@
 ﻿//Peter Van Horn
 //.NET Final Project
 //05/03/2024
+//quiz is the parent object, each quiz has a list of questions and each question has a list of options.
 
 namespace VanHorn_NET_Final.Models
 {

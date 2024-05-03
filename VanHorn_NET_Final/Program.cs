@@ -20,6 +20,7 @@ builder.Services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", opt
     options.AccessDeniedPath = "/Account/AccessDenied";
 });
 
+// so far this is the only policy I am using but adding more is pretty easy
 builder.Services.AddAuthorization(Options =>
 {
     Options.AddPolicy("TeacherOnly",

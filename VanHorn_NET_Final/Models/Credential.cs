@@ -1,6 +1,7 @@
 ﻿//Peter Van Horn
 //.NET Final Project
 //05/03/2024
+//used for the authentication. I used this more with my Web Services project.
 
 using System.ComponentModel.DataAnnotations;
 

@@ -1,6 +1,7 @@
 //Peter Van Horn
 //.NET Final Project
 //05/03/2024
+//login page where users are authenticated
 
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;

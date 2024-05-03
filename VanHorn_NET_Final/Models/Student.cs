@@ -1,6 +1,7 @@
 ﻿//Peter Van Horn
 //.NET Final Project
 //05/03/2024
+//Student class can take quizzes but not view details or other students quiz results
 
 namespace VanHorn_NET_Final.Models
 {

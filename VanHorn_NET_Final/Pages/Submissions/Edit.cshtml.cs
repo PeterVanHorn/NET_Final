@@ -1,6 +1,8 @@
 ﻿//Peter Van Horn
 //.NET Final Project
 //05/03/2024
+//each question of a quiz is a Submission/edit page, so the quiz taker hops
+//through a series of submission/edit pages to answer each question
 
 using System;
 using System.Collections.Generic;

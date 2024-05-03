@@ -1,6 +1,8 @@
 ﻿//Peter Van Horn
 //.NET Final Project
 //05/03/2024
+//another thing that I didnt consider relevant was deleting submissions,
+//there are not links that lead here in the interface.
 
 using System;
 using System.Collections.Generic;

@@ -1,6 +1,7 @@
 ﻿//Peter Van Horn
 //.NET Final Project
 //05/03/2024
+//page is not really set up to be visited, does not fit the scope of the app, barely modified over the default scaffolding
 
 using System;
 using System.Collections.Generic;
