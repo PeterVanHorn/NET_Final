@@ -1,4 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿//Peter Van Horn
+//.NET Final Project
+//05/03/2024
+
+using System.ComponentModel.DataAnnotations;
 
 namespace VanHorn_NET_Final.Models
 {

@@ -1,3 +1,7 @@
+//Peter Van Horn
+//.NET Final Project
+//05/03/2024
+
 using Microsoft.EntityFrameworkCore;
 using VanHorn_NET_Final.Models;
 

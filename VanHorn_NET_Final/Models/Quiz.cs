@@ -1,4 +1,8 @@
-﻿namespace VanHorn_NET_Final.Models
+﻿//Peter Van Horn
+//.NET Final Project
+//05/03/2024
+
+namespace VanHorn_NET_Final.Models
 {
     public class Quiz
     {
